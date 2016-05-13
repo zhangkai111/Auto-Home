@@ -29,7 +29,6 @@ public class AllDetail extends BaseActivity {
     protected void initData() {
         Intent intent = getIntent();
         String url = intent.getStringExtra("url");
-        Log.d("NewsDetail", url);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient(){
             @Override

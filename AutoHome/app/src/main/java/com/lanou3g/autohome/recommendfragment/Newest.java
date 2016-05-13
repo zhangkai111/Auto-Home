@@ -133,12 +133,24 @@ public class Newest extends BaseFragment implements RecyclerViewOnClickListener 
     public void onClick(int ids) {
         Intent intent = new Intent(context, NewsDetail.class);
         intent.setAction(Intent.ACTION_VIEW);
-        String url = "http://cont.app.autohome.com.cn/autov4.2.5/content/News/newscontent-a2-pm1-v4.2.5-n"+
-                ids+"-lz0-sp0-nt0-sa1-p0-c1-fs0-cw320.html";
-        intent.putExtra("url",url);
+        int viewType = adapter.getItemViewType(ids);
+        String url = "";
+        switch (viewType) {
+            case 3:
+                url = "http://v.autohome.com.cn/v_4_" + newestBean.getResult().getNewslist().get(ids).getId() + ".html";
+                break;
+            case 5:
+                url = "http://forum.app.autohome.com.cn/autov5.0.0/forum/club/topiccontent-a2-pm2-v5.0.0-t" + newestBean.getResult().getNewslist().get(ids).getId() + "-o0-p1-s20-c1-nt0-fs0-sp0-al0-cw320.json";
+                break;
+            default:
+                url = "http://cont.app.autohome.com.cn/autov4.2.5/content/News/newscontent-a2-pm1-v4.2.5-n" +
+                        newestBean.getResult().getNewslist().get(ids).getId() + "-lz0-sp0-nt0-sa1-p0-c1-fs0-cw320.html";
+                break;
+        }
+        intent.putExtra("url", url);
         startActivity(intent);
     }
-    
+
     public void initImageView() {
         dotViewList = new ArrayList<>();
         list = new ArrayList<>();

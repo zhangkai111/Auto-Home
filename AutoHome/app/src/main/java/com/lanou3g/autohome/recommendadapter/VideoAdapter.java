@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.lanou3g.autohome.R;
 import com.lanou3g.autohome.recommendbean.VideoBean;
+import com.lanou3g.autohome.recommendfragment.RecyclerViewOnClickListener;
 
 import it.sephiroth.android.library.picasso.Picasso;
 
@@ -20,6 +21,7 @@ public class VideoAdapter extends RecyclerView.Adapter {
 
     private VideoBean videoBean;
     private Context context;
+    private RecyclerViewOnClickListener recyclerViewOnClickListener;
 
     public VideoAdapter(Context context) {
         this.context = context;
@@ -30,6 +32,9 @@ public class VideoAdapter extends RecyclerView.Adapter {
         notifyDataSetChanged();
     }
 
+    public void setRecyclerViewOnClickListener(RecyclerViewOnClickListener recyclerViewOnClickListener) {
+        this.recyclerViewOnClickListener = recyclerViewOnClickListener;
+    }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -40,13 +45,24 @@ public class VideoAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
         VideoViewHolder videoViewHolder = (VideoViewHolder) holder;
         videoViewHolder.videoTitle.setText(videoBean.getResult().getList().get(position).getTitle());
         videoViewHolder.videoTime.setText(videoBean.getResult().getList().get(position).getTime());
         videoViewHolder.videoPlaycount.setText(videoBean.getResult().getList().get(position).getPlaycount() + "播放");
         String imgUrl = videoBean.getResult().getList().get(position).getSmallimg();
         setImage(videoViewHolder.imageView,imgUrl);
+
+        if (recyclerViewOnClickListener != null){
+            videoViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int pos = holder.getLayoutPosition();
+                    int ids = videoBean.getResult().getList().get(pos).getId();
+                    recyclerViewOnClickListener.onClick(ids);
+                }
+            });
+        }
     }
 
     @Override

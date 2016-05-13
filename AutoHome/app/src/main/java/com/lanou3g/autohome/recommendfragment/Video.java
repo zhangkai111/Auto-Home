@@ -1,5 +1,6 @@
 package com.lanou3g.autohome.recommendfragment;
 
+import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -15,13 +16,14 @@ import com.lanou3g.autohome.base.BaseFragment;
 import com.lanou3g.autohome.recommendbean.GsonRequest;
 import com.lanou3g.autohome.recommendbean.VideoBean;
 import com.lanou3g.autohome.recommendadapter.VideoAdapter;
+import com.lanou3g.autohome.recommenddetail.NewsDetail;
 import com.lanou3g.autohome.utils.DividerItemDecoration;
 
 /**
  * Created by dllo on 16/5/9.
  * 视频
  */
-public class Video extends BaseFragment {
+public class Video extends BaseFragment implements RecyclerViewOnClickListener {
 
     private RecyclerView recyclerView;
     private VideoAdapter videoAdapter;
@@ -58,6 +60,16 @@ public class Video extends BaseFragment {
         },VideoBean.class);
         requestQueue.add(gsonRequest);
         recyclerView.setAdapter(videoAdapter);
+        videoAdapter.setRecyclerViewOnClickListener(this);
+    }
 
+    @Override
+    public void onClick(int ids) {
+        Intent intent = new Intent(context, NewsDetail.class);
+        intent.setAction(Intent.ACTION_VIEW);
+        String url = "http://v.autohome.com.cn/v_4_"+
+                ids +".html";
+        intent.putExtra("url",url);
+        startActivity(intent);
     }
 }

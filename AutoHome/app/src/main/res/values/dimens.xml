@@ -10,4 +10,5 @@
     <dimen name="item_horizontal_padding">16dp</dimen>
     <dimen name="item_vertical_padding">16dp</dimen>
     <dimen name="newsflash_drawerlayout_icon_padding">3dp</dimen>
+    <dimen name="item_three_image_padding">3dp</dimen>
 </resources>

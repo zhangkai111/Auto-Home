@@ -43,7 +43,8 @@ public class All extends BaseFragment implements RecyclerViewOnClickListener {
     public void initData() {
 
         RequestQueue requestQueue = Volley.newRequestQueue(context);
-        GsonRequest<AllBean> gsonRequest = new GsonRequest<>(Request.Method.GET, "http://app.api.autohome.com.cn/autov4.8.8/club/jingxuantopic-pm1-c0-p1-s30.json",
+        GsonRequest<AllBean> gsonRequest = new GsonRequest<>(Request.Method.GET,
+                "http://app.api.autohome.com.cn/autov4.8.8/club/jingxuantopic-pm1-c0-p1-s30.json",
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {

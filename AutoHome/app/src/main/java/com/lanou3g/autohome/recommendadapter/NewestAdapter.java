@@ -97,8 +97,7 @@ public class NewestAdapter extends RecyclerView.Adapter {
                 @Override
                 public void onClick(View v) {
                     int pos = holder.getLayoutPosition();
-                    int ids = newestBean.getResult().getNewslist().get(pos).getId();
-                    recyclerViewOnClickListener.onClick(ids);
+                    recyclerViewOnClickListener.onClick(pos);
                 }
             });
         }
