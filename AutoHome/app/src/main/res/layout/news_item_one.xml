@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/news_item_one_iv"
+        android:layout_width="@dimen/item_image_one_width"
+        android:layout_height="@dimen/item_image_one_height"
+        android:padding="@dimen/item_image_padding" />
+
+    <TextView
+        android:id="@+id/news_item_one_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/news_item_one_iv"
+        android:padding="@dimen/item_normal_padding" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/news_item_one_iv"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/news_item_one_time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/item_normal_padding" />
+
+        <TextView
+            android:id="@+id/news_item_one_replycount_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/item_normal_padding" />
+    </RelativeLayout>
+</RelativeLayout>

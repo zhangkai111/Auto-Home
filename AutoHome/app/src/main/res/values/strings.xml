@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Auto Home</string>
+    <string name="app_name">汽车之家</string>
+    <string name="video_all_drawerlayout">全部</string>
+    <string name="newsflash_drawerlayout_brand">全部品牌</string>
+    <string name="newsflash_drawerlayout_level">全部级别</string>
+
 </resources>

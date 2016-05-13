@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/item_padding">
+
+    <TextView
+        android:id="@+id/newest_item_three_title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/newest_item_three_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/newest_item_three_title_tv"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/newest_item_three_first_iv"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/item_image_padding" />
+
+        <ImageView
+            android:id="@+id/newest_item_three_two_iv"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/item_image_padding" />
+
+        <ImageView
+            android:id="@+id/newest_item_three_three_iv"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/item_image_padding" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/newest_item_three_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newest_item_three_layout" />
+
+    <TextView
+        android:id="@+id/newest_item_three_three_replycount_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/newest_item_three_layout" />
+
+</RelativeLayout>
