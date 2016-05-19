@@ -66,8 +66,8 @@ public class All extends BaseFragment implements RecyclerViewOnClickListener {
     public void onClick(int ids) {
         Intent intent = new Intent(context, NewsDetail.class);
         intent.setAction(Intent.ACTION_VIEW);
-        String url = "http://app.api.autohome.com.cn/autov4.8.8/club/jingxuantopic-pm1-c0-p1-s30.json"+
-                ids+"-t2.json";
+        String url = "http://forum.app.autohome.com.cn/autov5.0.0/forum/club/topiccontent-a2-pm2-v5.0.0-t"+
+                ids + "-o0-p1-s20-c1-nt0-fs0-sp0-al0-cw320.json";
         intent.putExtra("url",url);
         startActivity(intent);
     }

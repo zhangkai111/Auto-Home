@@ -64,7 +64,7 @@ public class NewsAdapter extends RecyclerView.Adapter {
             ThreeImageViewHolder threeImageViewHolder = (ThreeImageViewHolder) holder;
             threeImageViewHolder.threeTitleTv.setText(newsBean.getResult().getNewslist().get(position).getTitle());
             threeImageViewHolder.threeTimeTv.setText(newsBean.getResult().getNewslist().get(position).getTime());
-            threeImageViewHolder.threeReplyTv.setText(newsBean.getResult().getNewslist().get(position).getReplycount());
+            threeImageViewHolder.threeReplyTv.setText(newsBean.getResult().getNewslist().get(position).getReplycount() + "评论");
             setImage(threeImageViewHolder.threeFirstIv, args[0]);
             setImage(threeImageViewHolder.threeTwoIv, args[1]);
             setImage(threeImageViewHolder.threeThreeIv, args[2]);

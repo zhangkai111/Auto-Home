@@ -35,6 +35,7 @@ public class AllAdapter extends RecyclerView.Adapter {
         this.allBean = allBean;
         notifyDataSetChanged();
     }
+    
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -58,7 +59,7 @@ public class AllAdapter extends RecyclerView.Adapter {
                 @Override
                 public void onClick(View v) {
                     int pos = holder.getLayoutPosition();
-                    int ids = allBean.getResult().getList().get(pos).getBbsid();
+                    int ids = allBean.getResult().getList().get(pos).getTopicid();
                     recyclerViewOnClickListener.onClick(ids);
                 }
             });

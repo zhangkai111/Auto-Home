@@ -1,70 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/video_all_right_drawerlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.lanou3g.demo.MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="com.lanou3g.demo.MainActivity">
 
-    <FrameLayout
-        android:id="@+id/main_activity_framelayout"
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
+        <FrameLayout
+            android:id="@+id/main_activity_framelayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray" />
 
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:orientation="horizontal"
-        >
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/item_horizontal_padding"
+            android:paddingRight="@dimen/item_horizontal_padding">
 
-        <RadioButton
-            android:id="@+id/main_recommend_rb"
-            android:layout_width="0dp"
+            <RadioButton
+                android:id="@+id/main_recommend_rb"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/recommend"
+                android:button="@null"
+                android:gravity="center" />
+
+            <RadioButton
+                android:id="@+id/main_forum_rb"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/forum"
+                android:button="@null" />
+
+            <RadioButton
+                android:id="@+id/main_findcar_rb"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/findcar"
+                android:button="@null" />
+
+            <RadioButton
+                android:id="@+id/main_discover_rb"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/discover"
+                android:button="@null" />
+
+            <RadioButton
+                android:id="@+id/main_person_rb"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/person"
+                android:button="@null" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:background="#dfff"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/drawerlayout_title_tv"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:button="@null"
-            android:gravity="center"
-            android:background="@drawable/recommend"
-            android:checked="true"
-            />
+            android:layout_centerHorizontal="true" />
 
-        <RadioButton
-            android:id="@+id/main_forum_rb"
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/drawerlayout_close_tv"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:button="@null"
-            android:background="@drawable/forum"
-            />
+            android:layout_alignParentRight="true"
+            android:paddingRight="@dimen/item_normal_padding"
+            android:text="@string/drawerlayout_close" />
 
-        <RadioButton
-            android:id="@+id/main_findcar_rb"
-            android:layout_width="0dp"
+        <ListView
+            android:id="@+id/drawerlayout_lv"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:button="@null"
-            android:background="@drawable/findcar"
-            />
-
-        <RadioButton
-            android:id="@+id/main_discover_rb"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:button="@null"
-            android:background="@drawable/discover" />
-
-        <RadioButton
-            android:id="@+id/main_person_rb"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:button="@null"
-            android:background="@drawable/person"
-            />
-    </RadioGroup>
-
-</LinearLayout>
+            android:layout_below="@id/drawerlayout_close_tv" />
+    </RelativeLayout>
+</android.support.v4.widget.DrawerLayout>

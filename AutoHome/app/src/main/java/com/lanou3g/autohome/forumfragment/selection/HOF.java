@@ -1,7 +1,5 @@
 package com.lanou3g.autohome.forumfragment.selection;
 
-import android.view.View;
-
 import com.lanou3g.autohome.R;
 import com.lanou3g.autohome.base.BaseFragment;
 
@@ -12,7 +10,7 @@ import com.lanou3g.autohome.base.BaseFragment;
 public class HOF extends BaseFragment {
     @Override
     public int initLayout() {
-        return R.layout.selection_hof;
+        return R.layout.selection_hot;
     }
 
     @Override

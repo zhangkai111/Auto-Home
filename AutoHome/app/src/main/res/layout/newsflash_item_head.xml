@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/newsflash_item_head_iv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/news_flash_head_image_height"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/newsflash_item_head_edit_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/item_text_padding"
+        android:layout_marginTop="@dimen/news_flash_head_text_margin_top" />
+
+    <TextView
+        android:id="@+id/newsflash_item_head_author_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/item_text_padding"
+        android:layout_marginTop="@dimen/news_flash_head_text_margin_top"
+        android:layout_toRightOf="@id/newsflash_item_head_edit_tv" />
+
+    <TextView
+        android:id="@+id/newsflash_item_head_reviewcount_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/news_flash_head_text_margin_top"
+        android:layout_toRightOf="@id/newsflash_item_head_author_tv" />
+
+    <TextView
+        android:id="@+id/newsflash_item_head_state_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:background="@color/colorGray"
+        android:textColor="@color/colorWhile"
+        android:layout_marginTop="@dimen/news_flash_head_text_margin_top" />
+
+    <TextView
+        android:id="@+id/newsflash_item_head_news_type_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/item_text_padding"
+        android:layout_marginTop="@dimen/news_flash_head_text_title_margin_top"
+        android:textColor="@color/colorWhile" />
+
+    <TextView
+        android:id="@+id/newsflash_item_head_news_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/item_newsflash_head_text_margin"
+        android:layout_marginTop="@dimen/news_flash_head_text_title_margin_top"
+        android:layout_toRightOf="@id/newsflash_item_head_news_type_name_tv"
+        android:textColor="@color/colorWhile" />
+
+    <RelativeLayout
+        android:id="@+id/news_flash_content_title_rl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/news_flash_head_layout_height"
+        android:layout_below="@id/newsflash_item_head_iv"
+        android:background="@color/colorGray">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/item_newsflash_head_text_margin"
+            android:paddingLeft="@dimen/item_normal_margin"
+            android:text="快报内容" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/news_flash_content_title_rl"
+        android:layout_margin="@dimen/item_margin">
+
+        <ImageView
+            android:id="@+id/newsflash_item_head_below_iv"
+            android:layout_width="@dimen/news_flash_detail_image_width"
+            android:layout_height="@dimen/news_flash_detail_image_height" />
+
+        <TextView
+            android:id="@+id/newsflash_item_head_below_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/item_text_margin"
+            android:layout_toRightOf="@id/newsflash_item_head_below_iv" />
+
+        <TextView
+            android:id="@+id/newsflash_item_head_below_time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/newsflash_item_head_below_name_tv"
+            android:layout_marginLeft="@dimen/item_text_margin"
+            android:layout_marginTop="@dimen/news_flash_head_below_text_margin_top"
+            android:layout_toRightOf="@id/newsflash_item_head_below_iv" />
+
+        <TextView
+            android:id="@+id/newsflash_item_head_below_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/newsflash_item_head_below_iv" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

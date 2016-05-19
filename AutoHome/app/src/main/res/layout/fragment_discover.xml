@@ -7,7 +7,7 @@
     <RelativeLayout
         android:id="@+id/discover_slideView"
         android:layout_width="match_parent"
-        android:layout_height="160.0dip" >
+        android:layout_height="@dimen/discover_drawerlayout_height" >
 
         <android.support.v4.view.ViewPager
             android:id="@+id/discover_myviewPager"
@@ -21,19 +21,19 @@
             android:layout_alignParentBottom="true"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="8dp" >
+            android:padding="@dimen/item_normal_padding" >
 
             <View
                 android:id="@+id/discover_v_dot1"
-                android:layout_width="8dp"
-                android:layout_height="8dp"
+                android:layout_width="@dimen/discover_view_width"
+                android:layout_height="@dimen/discover_view_height"
                 android:background="@mipmap/point_pressed" />
 
             <View
                 android:id="@+id/discover_v_dot2"
-                android:layout_width="8dp"
-                android:layout_height="8dp"
-                android:layout_marginLeft="5dp"
+                android:layout_width="@dimen/discover_view_width"
+                android:layout_height="@dimen/discover_view_height"
+                android:layout_marginLeft="@dimen/item_image_padding"
                 android:background="@mipmap/point_unpressed" />
         </LinearLayout>
     </RelativeLayout>

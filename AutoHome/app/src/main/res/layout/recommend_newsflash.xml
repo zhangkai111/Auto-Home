@@ -18,6 +18,7 @@
             android:paddingLeft="@dimen/item_normal_padding"
             android:text="@string/newsflash_drawerlayout_brand"/>
         <ImageView
+            android:id="@+id/news_flash_brand_iv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/drawerlayout_icon_btn"
@@ -29,6 +30,7 @@
             android:paddingLeft="@dimen/item_horizontal_padding"
             android:text="@string/newsflash_drawerlayout_level"/>
         <ImageView
+            android:id="@+id/news_flash_level_iv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/newsflash_drawerlayout_icon_padding"

@@ -8,7 +8,6 @@ import com.lanou3g.autohome.base.BaseActivity;
  */
 public class NewestDetail extends BaseActivity {
 
-
     @Override
     protected int getLayout() {
         return R.layout.newest_detail;

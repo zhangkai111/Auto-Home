@@ -17,15 +17,18 @@ import com.lanou3g.autohome.base.BaseFragment;
 import com.lanou3g.autohome.recommendbean.GsonRequest;
 import com.lanou3g.autohome.recommendbean.NewsBean;
 import com.lanou3g.autohome.recommenddetail.NewsDetail;
+import com.lanou3g.autohome.swipe.SwipeRefreshLoadingLayout;
 import com.lanou3g.autohome.utils.DividerItemDecoration;
 
 /**
  * Created by dllo on 16/5/9.
  */
-public class News extends BaseFragment implements RecyclerViewOnClickListener {
+public class News extends BaseFragment implements RecyclerViewOnClickListener, SwipeRefreshLoadingLayout.OnLoadListener, SwipeRefreshLoadingLayout.OnRefreshListener {
 
     private RecyclerView recyclerView;
     private NewsAdapter adapter;
+    private SwipeRefreshLoadingLayout swipeRefreshLoadingLayout;
+    private NewsBean newsBean;
 
     @Override
     public int initLayout() {
@@ -36,9 +39,13 @@ public class News extends BaseFragment implements RecyclerViewOnClickListener {
     public void initView() {
 
         recyclerView = bindView(R.id.recommend_news_rv);
+        swipeRefreshLoadingLayout = bindView(R.id.swipe);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.addItemDecoration(new DividerItemDecoration(context, DividerItemDecoration.VERTICAL_LIST));
         adapter = new NewsAdapter(context);
+        swipeRefreshLoadingLayout.setOnLoadListener(this);
+        swipeRefreshLoadingLayout.setOnRefreshListener(this);
+
     }
 
     @Override
@@ -71,5 +78,30 @@ public class News extends BaseFragment implements RecyclerViewOnClickListener {
                 ids+"-lz0-sp0-nt0-sa1-p0-c1-fs0-cw320.html";
         intent.putExtra("url",url);
         startActivity(intent);
+    }
+
+    @Override
+    public void onLoad() {
+        recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    public void onRefresh() {
+        RequestQueue requestQueue = Volley.newRequestQueue(context);
+        GsonRequest<NewsBean> gsonRequest = new GsonRequest<>(Request.Method.GET, "http://app.api.autohome.com.cn/autov5.0.0/news/newslist-pm1-c0-nt1-p1-s30-l0.json",
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                }, new Response.Listener<NewsBean>() {
+            @Override
+            public void onResponse(NewsBean response) {
+                adapter.setNewsBean(response);
+            }
+        }, NewsBean.class);
+        requestQueue.add(gsonRequest);
+        recyclerView.setAdapter(adapter);
+        swipeRefreshLoadingLayout.setRefreshing(false);
     }
 }
