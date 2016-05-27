@@ -29,7 +29,7 @@
     <dimen name="person_image_width">40dp</dimen>
     <dimen name="person_image_height">40dp</dimen>
     <dimen name="person_login_layout_height">120dp</dimen>
-    <dimen name="person_login_way_height">100dp</dimen>
+    <dimen name="person_login_way_height">80dp</dimen>
     <dimen name="text_width">60dp</dimen>
     <dimen name="person_view_width">0.5dp</dimen>
     <dimen name="person_view_height">20dp</dimen>
@@ -46,5 +46,33 @@
     <dimen name="news_flash_head_text_title_margin_top">100dp</dimen>
     <dimen name="news_flash_head_layout_height">30dp</dimen>
     <dimen name="news_flash_head_below_text_margin_top">10dp</dimen>
+    <dimen name="radio_group_height">55dp</dimen>
+    <dimen name="margin_fifteen">15dp</dimen>
+    <dimen name="margin_twenty">20dp</dimen>
+    <dimen name="drawer_layout_width">300dp</dimen>
+    <dimen name="all_image_width">100dp</dimen>
+    <dimen name="all_image_height">90dp</dimen>
+    <dimen name="margin_five">5dp</dimen>
+    <dimen name="margin_ten">10dp</dimen>
+    <dimen name="text_size_fifteen">15sp</dimen>
+    <dimen name="text_size_twelve">12sp</dimen>
+    <dimen name="margin_eight">8dp</dimen>
+    <dimen name="brand_head_image_width">50dp</dimen>
+    <dimen name="brand_head_image_height">80dp</dimen>
+    <dimen name="brand_relative_layout_width">128dp</dimen>
+    <dimen name="brand_relative_layout_height">110dp</dimen>
+    <dimen name="brand_relative_layout_height_otz">120dp</dimen>
+    <dimen name="width_otz">120dp</dimen>
+    <dimen name="height_otz">120dp</dimen>
+    <dimen name="width_sixty">60dp</dimen>
+    <dimen name="fifty">50dp</dimen>
+    <dimen name="hundred">100dp</dimen>
+    <dimen name="seventy">70dp</dimen>
+    <dimen name="margin_six">6dp</dimen>
+    <dimen name="thirty">30dp</dimen>
+    <dimen name="discover_image_width">65dp</dimen>
+    <dimen name="discover_image_height">65dp</dimen>
+    <dimen name="activity_width_ofz">150dp</dimen>
+
 
 </resources>

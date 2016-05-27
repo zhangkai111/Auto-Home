@@ -9,27 +9,34 @@
         android:layout_width="@dimen/item_image_one_width"
         android:layout_height="@dimen/item_image_one_height"
         android:layout_alignParentLeft="true" />
+
     <TextView
         android:id="@+id/newest_item_one_title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/newest_item_one_iv"
-        android:paddingLeft="@dimen/item_normal_padding"/>
+        android:paddingLeft="@dimen/item_normal_padding"
+        android:textSize="15sp" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/newest_item_one_iv"
-        android:layout_alignParentBottom="true">
-    <TextView
-        android:id="@+id/newest_item_one_time_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="@dimen/item_normal_padding"/>
-    <TextView
-        android:id="@+id/newest_item_one_replycount_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:paddingRight="@dimen/item_normal_padding"/>
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/newest_item_one_iv">
+
+        <TextView
+            android:id="@+id/newest_item_one_time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/item_normal_padding"
+            android:textColor="@color/colorGray"/>
+
+        <TextView
+            android:id="@+id/newest_item_one_replycount_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingRight="@dimen/item_normal_padding"
+            android:textColor="@color/colorGray" />
     </RelativeLayout>
 </RelativeLayout>

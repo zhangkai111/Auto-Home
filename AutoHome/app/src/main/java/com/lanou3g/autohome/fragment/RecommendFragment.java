@@ -13,9 +13,7 @@ import com.lanou3g.autohome.recommendfragment.Newest;
 import com.lanou3g.autohome.recommendfragment.News;
 import com.lanou3g.autohome.recommendfragment.NewsFlash;
 import com.lanou3g.autohome.recommendfragment.OriginalVideo;
-import com.lanou3g.autohome.recommendfragment.Price;
 import com.lanou3g.autohome.recommendfragment.Refit;
-import com.lanou3g.autohome.recommendfragment.Shopping;
 import com.lanou3g.autohome.recommendfragment.Technology;
 import com.lanou3g.autohome.recommendfragment.Travels;
 import com.lanou3g.autohome.recommendfragment.UseCar;
@@ -60,8 +58,6 @@ public class RecommendFragment extends BaseFragment {
         fragments.add(new NewsFlash());
         fragments.add(new Video());
         fragments.add(new News());
-        fragments.add(new Shopping());
-        fragments.add(new Price());
         fragments.add(new UseCar());
         fragments.add(new Technology());
         fragments.add(new Culture());

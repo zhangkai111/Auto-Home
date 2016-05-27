@@ -7,7 +7,8 @@
     <TextView
         android:id="@+id/news_item_three_title_tv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textSize="15sp"/>
 
     <LinearLayout
         android:id="@+id/news_item_three_layout"
@@ -43,11 +44,13 @@
         android:id="@+id/news_item_three_time_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/news_item_three_layout" />
+        android:layout_below="@id/news_item_three_layout"
+        android:textColor="@color/colorGray"/>
     <TextView
         android:id="@+id/news_item_three_replycount_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/news_item_three_layout"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentRight="true"
+        android:textColor="@color/colorGray"/>
 </RelativeLayout>

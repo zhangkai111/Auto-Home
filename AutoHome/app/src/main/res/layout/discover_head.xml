@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_ten">
+
+                    <ImageView
+                        android:id="@+id/discover_head_scroll_car_iv"
+                        android:layout_width="@dimen/discover_image_width"
+                        android:layout_height="@dimen/discover_image_height"
+                        android:layout_margin="@dimen/margin_five"
+                        android:layout_centerHorizontal="true"/>
+                    <TextView
+                        android:id="@+id/discover_head_scroll_car_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/discover_head_scroll_car_iv"
+                        android:layout_margin="@dimen/margin_five"
+                        android:layout_centerHorizontal="true"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_ten">
+
+                    <ImageView
+                        android:id="@+id/discover_head_scroll_activity_iv"
+                        android:layout_width="@dimen/discover_image_width"
+                        android:layout_height="@dimen/discover_image_height"
+                        android:layout_margin="@dimen/margin_five"
+                        android:layout_centerHorizontal="true"/>
+                    <TextView
+                        android:id="@+id/discover_head_scroll_activity_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/discover_head_scroll_activity_iv"
+                        android:layout_margin="@dimen/margin_five"
+                        android:layout_centerHorizontal="true"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_ten">
+
+                    <ImageView
+                        android:id="@+id/discover_head_scroll_compare_iv"
+                        android:layout_width="@dimen/discover_image_width"
+                        android:layout_height="@dimen/discover_image_height"
+                        android:layout_margin="@dimen/margin_five"
+                        android:layout_centerHorizontal="true"/>
+                    <TextView
+                        android:id="@+id/discover_head_scroll_compare_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/discover_head_scroll_compare_iv"
+                        android:layout_margin="@dimen/margin_five"
+                        android:layout_centerHorizontal="true"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_ten">
+
+                    <ImageView
+                        android:id="@+id/discover_head_scroll_query_iv"
+                        android:layout_width="@dimen/discover_image_width"
+                        android:layout_height="@dimen/discover_image_height"
+                        android:layout_margin="@dimen/margin_five"
+                        android:layout_centerHorizontal="true"/>
+                    <TextView
+                        android:id="@+id/discover_head_scroll_query_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/discover_head_scroll_query_iv"
+                        android:layout_margin="@dimen/margin_five"
+                        android:layout_centerHorizontal="true"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_ten">
+
+                    <ImageView
+                        android:id="@+id/discover_head_scroll_friend_iv"
+                        android:layout_width="@dimen/discover_image_width"
+                        android:layout_height="@dimen/discover_image_height"
+                        android:layout_margin="@dimen/margin_five"
+                        android:layout_centerHorizontal="true"/>
+                    <TextView
+                        android:id="@+id/discover_head_scroll_friend_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/discover_head_scroll_friend_iv"
+                        android:layout_margin="@dimen/margin_five"
+                        android:layout_centerHorizontal="true"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_ten">
+
+                    <ImageView
+                        android:id="@+id/discover_head_scroll_valuation_iv"
+                        android:layout_width="@dimen/discover_image_width"
+                        android:layout_height="@dimen/discover_image_height"
+                        android:layout_margin="@dimen/margin_five"
+                        android:layout_centerHorizontal="true"/>
+                    <TextView
+                        android:id="@+id/discover_head_scroll_valuation_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/discover_head_scroll_valuation_iv"
+                        android:layout_margin="@dimen/margin_five"
+                        android:layout_centerHorizontal="true"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_ten">
+
+                    <ImageView
+                        android:id="@+id/discover_head_scroll_plan_iv"
+                        android:layout_width="@dimen/discover_image_width"
+                        android:layout_height="@dimen/discover_image_height"
+                        android:layout_margin="@dimen/margin_five"
+                        android:layout_centerHorizontal="true"/>
+                    <TextView
+                        android:id="@+id/discover_head_scroll_plan_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/discover_head_scroll_plan_iv"
+                        android:layout_margin="@dimen/margin_five"
+                        android:layout_centerHorizontal="true"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_ten">
+
+                    <ImageView
+                        android:id="@+id/discover_head_scroll_home_iv"
+                        android:layout_width="@dimen/discover_image_width"
+                        android:layout_height="@dimen/discover_image_height"
+                        android:layout_margin="@dimen/margin_five"
+                        android:layout_centerHorizontal="true"/>
+                    <TextView
+                        android:id="@+id/discover_head_scroll_home_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/discover_head_scroll_home_iv"
+                        android:layout_margin="@dimen/margin_five"
+                        android:layout_centerHorizontal="true"/>
+                </RelativeLayout>
+
+
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+    </LinearLayout>
+
+    <include layout="@layout/view"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_width_ofz">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="活动专区"
+                android:layout_margin="@dimen/margin_ten"/>
+            <ImageView
+                android:id="@+id/discover_head_arrow"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:src="@mipmap/arrow"/>
+            <TextView
+                android:id="@+id/discover_more_activity_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="更多活动"
+                android:layout_toLeftOf="@id/discover_head_arrow"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorGray"/>
+            <ImageView
+                android:id="@+id/discover_head_first_iv"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@id/discover_head_arrow"
+                android:layout_margin="10dp"/>
+
+            <ImageView
+                android:id="@+id/discover_head_second_iv"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@id/discover_head_arrow"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"/>
+            <ImageView
+                android:id="@+id/discover_head_third_iv"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@id/discover_head_arrow"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <include layout="@layout/view"/>
+
+    <RelativeLayout
+        android:layout_width="384dp"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/discover_head_car_shop_iv"
+            android:layout_width="192dp"
+            android:layout_height="99dp"/>
+        <ImageView
+            android:id="@+id/discover_head_buy_iv"
+            android:layout_width="192dp"
+            android:layout_height="99dp"
+            android:layout_alignParentRight="true"/>
+
+        <ImageView
+            android:id="@+id/discover_head_used_car_iv"
+            android:layout_width="192dp"
+            android:layout_height="99dp"
+            android:layout_below="@id/discover_head_car_shop_iv"/>
+        <ImageView
+            android:id="@+id/discover_head_beauty_iv"
+            android:layout_width="192dp"
+            android:layout_height="99dp"
+            android:layout_below="@id/discover_head_car_shop_iv"
+            android:layout_alignParentRight="true"/>
+        <ImageView
+            android:id="@+id/discover_head_insurance_iv"
+            android:layout_width="192dp"
+            android:layout_height="99dp"
+            android:layout_below="@id/discover_head_used_car_iv"/>
+        <ImageView
+            android:id="@+id/discover_head_oil_iv"
+            android:layout_width="192dp"
+            android:layout_height="99dp"
+            android:layout_below="@id/discover_head_beauty_iv"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+    <include layout="@layout/view"/>
+
+</LinearLayout>

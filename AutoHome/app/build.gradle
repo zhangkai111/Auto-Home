@@ -4,6 +4,11 @@ android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
 
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
     defaultConfig {
         applicationId "com.lanou3g.autohome"
         minSdkVersion 15
@@ -28,4 +33,6 @@ dependencies {
     compile 'com.netflix.feign:feign-gson:8.16.2'
     compile 'it.sephiroth.android.library.picasso:picasso:2.5.2.4b'
     compile 'com.bartoszlipinski:recyclerviewheader:1.2.1'
+    compile project(':library')
+    compile 'de.greenrobot:greendao:2.1.0'
 }

@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class RecommendAdapter extends FragmentPagerAdapter {
     private List<Fragment> fragments;
-    String[] titles = {"最新", "快报" , "视频" , "新闻" , "导购" , "行情" , "用车" , "技术" , "文化" , "改装" , "游记" , "原创视频" , "说客"};
+    String[] titles = {"最新", "快报", "视频", "新闻", "用车", "技术", "文化", "改装", "游记", "原创视频", "说客"};
 
     public RecommendAdapter(FragmentManager fm) {
         super(fm);
@@ -29,8 +29,9 @@ public class RecommendAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return fragments == null ? 0 :fragments.size();
+        return fragments == null ? 0 : fragments.size();
     }
+
     @Override
     public CharSequence getPageTitle(int position) {
         return titles[position];

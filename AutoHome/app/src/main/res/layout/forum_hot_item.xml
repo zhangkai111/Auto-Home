@@ -1,16 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/form_hot_item_title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="@dimen/item_normal_padding"
-        android:text="title"/>
+        android:textSize="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:text="title" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/form_hot_item_content_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="content"
+            android:textColor="@color/colorGray" />
+        <TextView
+            android:id="@+id/form_hot_item_time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="time"
+            android:padding="10dp"
+            android:textColor="@color/colorGray"
+            android:layout_toRightOf="@id/form_hot_item_content_tv"/>
+
+        <TextView
+            android:id="@+id/form_hot_item_replycontent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="replycontent"
+            android:textColor="@color/colorGray"
+            android:padding="10dp"/>
+    </RelativeLayout>
+</LinearLayout>

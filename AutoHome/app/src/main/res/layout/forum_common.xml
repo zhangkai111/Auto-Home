@@ -1,6 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/forum_common_car_iv"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="10dp"
+            android:src="@mipmap/caricon"/>
+
+        <TextView
+            android:id="@+id/forum_common_car_forum_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="车系论坛"
+            android:layout_toRightOf="@id/forum_common_car_iv"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="为你的爱车找到队伍"
+            android:layout_toRightOf="@id/forum_common_car_iv"
+            android:layout_below="@id/forum_common_car_forum_tv"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/colorGray"
+            android:layout_marginTop="15dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/forum_common_area_iv"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="10dp"
+            android:src="@mipmap/area"/>
+
+        <TextView
+            android:id="@+id/forum_common_area_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="车系论坛"
+            android:layout_toRightOf="@id/forum_common_area_iv"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="老乡见老乡,两眼泪汪汪"
+            android:layout_toRightOf="@id/forum_common_area_iv"
+            android:layout_below="@id/forum_common_area_tv"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/colorGray"
+            android:layout_marginTop="15dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/forum_common_them_iv"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="10dp"
+            android:src="@mipmap/flag"/>
+
+        <TextView
+            android:id="@+id/forum_common_them_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="车系论坛"
+            android:layout_toRightOf="@id/forum_common_them_iv"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="兴趣爱好的聚集地"
+            android:layout_toRightOf="@id/forum_common_them_iv"
+            android:layout_below="@id/forum_common_them_tv"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/colorGray"
+            android:layout_marginTop="15dp"/>
+    </RelativeLayout>
 
 </LinearLayout>

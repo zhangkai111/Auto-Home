@@ -12,10 +12,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
 import com.lanou3g.autohome.R;
 import com.lanou3g.autohome.base.BaseFragment;
-import com.lanou3g.autohome.forumselectionadapter.AllAdapter;
-import com.lanou3g.autohome.forumselectionbean.AllBean;
+import com.lanou3g.autohome.forumadapter.AllAdapter;
+import com.lanou3g.autohome.forumbean.AllBean;
 import com.lanou3g.autohome.recommendbean.GsonRequest;
-import com.lanou3g.autohome.recommenddetail.NewsDetail;
+import com.lanou3g.autohome.recommenddetail.Detail;
 import com.lanou3g.autohome.recommendfragment.RecyclerViewOnClickListener;
 import com.lanou3g.autohome.utils.DividerItemDecoration;
 
@@ -64,7 +64,7 @@ public class All extends BaseFragment implements RecyclerViewOnClickListener {
 
     @Override
     public void onClick(int ids) {
-        Intent intent = new Intent(context, NewsDetail.class);
+        Intent intent = new Intent(context, Detail.class);
         intent.setAction(Intent.ACTION_VIEW);
         String url = "http://forum.app.autohome.com.cn/autov5.0.0/forum/club/topiccontent-a2-pm2-v5.0.0-t"+
                 ids + "-o0-p1-s20-c1-nt0-fs0-sp0-al0-cw320.json";

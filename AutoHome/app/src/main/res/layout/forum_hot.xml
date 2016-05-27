@@ -4,8 +4,8 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/form_hot_rv"
+    <ListView
+        android:id="@+id/form_hot_lv"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"/>

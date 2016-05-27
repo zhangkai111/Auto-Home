@@ -1,6 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/line"/>
+    <RelativeLayout
+        android:id="@+id/findcar_filter_condition_rl"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+    <TextView
+        android:id="@+id/findcar_filter_condition_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="条件"
+        android:layout_centerInParent="true"/>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@id/findcar_filter_condition_tv"
+            android:src="@mipmap/sanjiao"/>
+    </RelativeLayout>
+    <include layout="@layout/line"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="热门车系"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+    <include layout="@layout/line"/>
+
+
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/findcar_filter_lv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 
 </LinearLayout>

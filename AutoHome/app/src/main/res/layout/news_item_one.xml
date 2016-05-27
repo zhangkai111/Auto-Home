@@ -14,7 +14,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/news_item_one_iv"
-        android:padding="@dimen/item_normal_padding" />
+        android:padding="@dimen/item_normal_padding"
+        android:textSize="15sp"
+        android:text="title"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -26,13 +28,17 @@
             android:id="@+id/news_item_one_time_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="@dimen/item_normal_padding" />
+            android:padding="@dimen/item_normal_padding"
+            android:textColor="@color/colorGray"
+            android:text="time"/>
 
         <TextView
             android:id="@+id/news_item_one_replycount_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:padding="@dimen/item_normal_padding" />
+            android:padding="@dimen/item_normal_padding"
+            android:textColor="@color/colorGray"
+            android:text="reply"/>
     </RelativeLayout>
 </RelativeLayout>

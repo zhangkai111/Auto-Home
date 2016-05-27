@@ -1,7 +1,5 @@
 package com.lanou3g.autohome.recommendfragment;
 
-import android.view.View;
-
 import com.lanou3g.autohome.R;
 import com.lanou3g.autohome.base.BaseFragment;
 

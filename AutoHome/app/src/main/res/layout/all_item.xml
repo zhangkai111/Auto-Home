@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="@dimen/item_normal_padding">
+    android:layout_height="105dp">
 
     <ImageView
         android:id="@+id/all_item_iv"
-        android:layout_width="@dimen/item_image_one_width"
-        android:layout_height="@dimen/item_image_one_height"
-        android:padding="@dimen/item_image_padding" />
+        android:layout_width="@dimen/all_image_width"
+        android:layout_height="@dimen/all_image_height"
+        android:layout_margin="@dimen/margin_five"/>
     <TextView
         android:id="@+id/all_item_title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/all_item_iv"
+        android:layout_marginTop="@dimen/margin_ten"
+        android:textSize="@dimen/text_size_fifteen"
         android:text="title"/>
     <TextView
         android:id="@+id/all_item_bbsname_tv"
@@ -21,14 +22,18 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@id/all_item_iv"
+        android:layout_marginBottom="@dimen/margin_twenty"
+        android:textColor="@color/colorGray"
         android:text="bbsname"/>
 
     <TextView
         android:id="@+id/all_item_replycounts_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingRight="@dimen/item_normal_padding"
+        android:layout_marginRight="@dimen/margin_eight"
+        android:textColor="@color/colorGray"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/margin_twenty"
         android:text="reply"/>
 </RelativeLayout>

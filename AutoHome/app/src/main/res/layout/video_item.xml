@@ -22,12 +22,14 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/video_item_iv"
         android:layout_alignParentBottom="true"
-        android:paddingLeft="@dimen/item_normal_padding" />
+        android:paddingLeft="@dimen/item_normal_padding"
+        android:textColor="@color/colorGray"/>
     <TextView
         android:id="@+id/video_item_playcount_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:paddingRight="@dimen/item_normal_padding" />
+        android:paddingRight="@dimen/item_normal_padding"
+        android:textColor="@color/colorGray" />
 </RelativeLayout>

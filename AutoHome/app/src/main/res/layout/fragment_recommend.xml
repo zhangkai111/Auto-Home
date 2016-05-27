@@ -23,7 +23,7 @@
             android:layout_height="@dimen/sousuo_image_height"
             android:paddingRight="@dimen/item_normal_padding"
             android:paddingTop="@dimen/item_normal_padding"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@mipmap/sousuo" />
     </LinearLayout>
 
     <android.support.v4.view.ViewPager

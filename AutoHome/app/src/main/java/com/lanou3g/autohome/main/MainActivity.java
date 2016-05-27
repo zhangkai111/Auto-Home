@@ -26,9 +26,12 @@ import com.lanou3g.autohome.fragment.ForumFragment;
 import com.lanou3g.autohome.fragment.PersonFragment;
 import com.lanou3g.autohome.fragment.RecommendFragment;
 import com.lanou3g.autohome.recommendadapter.DrawerLayoutAdapter;
+import com.lanou3g.autohome.utils.ExampleUtil;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import cn.jpush.android.api.JPushInterface;
 
 /**
  * Created by dllo on 16/5/9.
@@ -42,6 +45,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     private List<String> videoAllDrawerLayoutList, newsFlashBrandList, newsFlashLevelList;
     private DrawerLayoutAdapter drawerLayoutAdapter;
     private TextView drawerLayoutTitleTv;
+    public static boolean isForeground = false;
 
     @Override
     protected int getLayout() {
@@ -74,11 +78,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         discoverRb.setOnClickListener(this);
         personRb.setOnClickListener(this);
         drawerLayout.setDrawerListener(this);
+        drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //DrawerLayoutAdapter.ViewHolder holder= (DrawerLayoutAdapter.ViewHolder) view.getTag();
-                Toast.makeText(MainActivity.this, "点击了" + position, Toast.LENGTH_SHORT).show();
+
+
             }
         });
 
@@ -123,7 +128,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         newsFlashLevelList.add("中大型车");
         newsFlashLevelList.add("大型车");
         newsFlashLevelList.add("跑车");
-}
+    }
 
     @Override
     protected void initData() {
@@ -134,6 +139,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
         fragmentTransaction.replace(R.id.main_activity_framelayout, new RecommendFragment());
         fragmentTransaction.commit();
+
+        registerMessageReceiver();  // used for receive msg
     }
 
     @Override
@@ -193,7 +200,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         //设置页面的抽屉是从右边弹出来的
         @Override
         public void onReceive(Context context, Intent intent) {
-            int type = intent.getIntExtra("drawerlayout",0);
+            int type = intent.getIntExtra("drawerlayout", 0);
 
             switch (type) {
                 case 1:
@@ -225,6 +232,63 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         super.onDestroy();
         //取消video页面抽屉的广播
         unregisterReceiver(drawerLayoutBroadcast);
+        unregisterReceiver(mMessageReceiver);
 
     }
+
+    // 初始化 JPush。如果已经初始化，但没有登录成功，则执行重新登录。
+    private void init(){
+        JPushInterface.init(getApplicationContext());
+    }
+
+
+    @Override
+    protected void onResume() {
+        isForeground = true;
+        super.onResume();
+    }
+
+
+    @Override
+    protected void onPause() {
+        isForeground = false;
+        super.onPause();
+    }
+
+
+
+
+
+    //for receive customer msg from jpush server
+    private MessageReceiver mMessageReceiver;
+    public static final String MESSAGE_RECEIVED_ACTION = "com.example.jpushdemo.MESSAGE_RECEIVED_ACTION";
+    public static final String KEY_TITLE = "title";
+    public static final String KEY_MESSAGE = "message";
+    public static final String KEY_EXTRAS = "extras";
+
+    public void registerMessageReceiver() {
+        mMessageReceiver = new MessageReceiver();
+        IntentFilter filter = new IntentFilter();
+        filter.setPriority(IntentFilter.SYSTEM_HIGH_PRIORITY);
+        filter.addAction(MESSAGE_RECEIVED_ACTION);
+        registerReceiver(mMessageReceiver, filter);
+    }
+
+    public class MessageReceiver extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (MESSAGE_RECEIVED_ACTION.equals(intent.getAction())) {
+                String messge = intent.getStringExtra(KEY_MESSAGE);
+                String extras = intent.getStringExtra(KEY_EXTRAS);
+                StringBuilder showMsg = new StringBuilder();
+                showMsg.append(KEY_MESSAGE + " : " + messge + "\n");
+                if (!ExampleUtil.isEmpty(extras)) {
+                    showMsg.append(KEY_EXTRAS + " : " + extras + "\n");
+                }
+
+            }
+        }
+    }
+
 }

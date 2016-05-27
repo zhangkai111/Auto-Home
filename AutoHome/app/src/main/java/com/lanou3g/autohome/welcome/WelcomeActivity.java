@@ -20,6 +20,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import cn.jpush.android.api.JPushInterface;
+
 /**
  * Created by dllo on 16/5/5.
  */
@@ -113,4 +115,15 @@ public class WelcomeActivity extends BaseActivity {
         }
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        JPushInterface.onResume(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        JPushInterface.onPause(this);
+    }
 }

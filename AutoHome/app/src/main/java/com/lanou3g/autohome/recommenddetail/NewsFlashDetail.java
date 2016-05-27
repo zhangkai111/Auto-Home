@@ -3,10 +3,6 @@ package com.lanou3g.autohome.recommenddetail;
 import android.content.Intent;
 import android.util.Log;
 import android.view.View;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -21,7 +17,6 @@ import com.lanou3g.autohome.base.BaseActivity;
 import com.lanou3g.autohome.recommendadapter.NewsFlashDetailAdapter;
 import com.lanou3g.autohome.recommendbean.GsonRequest;
 import com.lanou3g.autohome.recommendbean.NewsFlashDetailBean;
-import com.lanou3g.autohome.swipe.RefreshableView;
 
 import it.sephiroth.android.library.picasso.Picasso;
 
@@ -61,7 +56,6 @@ public class NewsFlashDetail extends BaseActivity {
         newsFlashDetailAdapter.setNewsFlashDetailBean(newsFlashDetailBean);
         listView.setAdapter(newsFlashDetailAdapter);
         listView.addHeaderView(headView);
-
     }
 
     @Override
@@ -73,19 +67,16 @@ public class NewsFlashDetail extends BaseActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Log.d("NewsFlashDetail", "NewsFlashDetail拉取数据失败");
+
                     }
                 }, new Response.Listener<NewsFlashDetailBean>() {
             @Override
             public void onResponse(NewsFlashDetailBean response) {
-                Log.d("NewsFlashDetail", "NewsFlashDetail拉取数据成功");
                 setData(response);
                 newsFlashDetailAdapter.setNewsFlashDetailBean(response);
             }
         }, NewsFlashDetailBean.class);
         requestQueue.add(gsonRequest);
-        listView.setAdapter(newsFlashDetailAdapter);
-
     }
 
     private void setData(NewsFlashDetailBean newsFlashDetailBean) {

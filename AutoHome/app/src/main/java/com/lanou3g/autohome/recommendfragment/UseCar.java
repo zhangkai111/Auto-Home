@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.View;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -16,7 +15,7 @@ import com.lanou3g.autohome.base.BaseFragment;
 import com.lanou3g.autohome.recommendadapter.UseCarAdapter;
 import com.lanou3g.autohome.recommendbean.GsonRequest;
 import com.lanou3g.autohome.recommendbean.UseCarBean;
-import com.lanou3g.autohome.recommenddetail.NewsDetail;
+import com.lanou3g.autohome.recommenddetail.Detail;
 import com.lanou3g.autohome.utils.DividerItemDecoration;
 
 /**
@@ -68,7 +67,7 @@ public class UseCar extends BaseFragment implements RecyclerViewOnClickListener 
 
     @Override
     public void onClick(int ids) {
-        Intent intent = new Intent(new Intent(context, NewsDetail.class));
+        Intent intent = new Intent(new Intent(context, Detail.class));
         intent.setAction(Intent.ACTION_VIEW);
         int viewType = adapter.getItemViewType(ids);
         String url = "";

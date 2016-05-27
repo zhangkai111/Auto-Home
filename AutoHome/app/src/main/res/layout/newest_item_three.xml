@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="@dimen/item_padding">
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/newest_item_three_title_tv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_marginLeft="10dp"/>
 
     <LinearLayout
         android:id="@+id/newest_item_three_layout"
@@ -21,6 +22,7 @@
             android:id="@+id/newest_item_three_first_iv"
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:src="@mipmap/ic_launcher"
             android:layout_height="wrap_content"
             android:padding="@dimen/item_image_padding" />
 
@@ -28,6 +30,7 @@
             android:id="@+id/newest_item_three_two_iv"
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:src="@mipmap/ic_launcher"
             android:layout_height="wrap_content"
             android:padding="@dimen/item_image_padding" />
 
@@ -35,6 +38,7 @@
             android:id="@+id/newest_item_three_three_iv"
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:src="@mipmap/ic_launcher"
             android:layout_height="wrap_content"
             android:padding="@dimen/item_image_padding" />
     </LinearLayout>
@@ -43,13 +47,17 @@
         android:id="@+id/newest_item_three_time_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/newest_item_three_layout" />
+        android:layout_below="@id/newest_item_three_layout"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/colorGray"/>
 
     <TextView
         android:id="@+id/newest_item_three_three_replycount_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_below="@id/newest_item_three_layout" />
+        android:layout_below="@id/newest_item_three_layout"
+        android:textColor="@color/colorGray"
+        android:layout_marginRight="10dp"/>
 
 </RelativeLayout>

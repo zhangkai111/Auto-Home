@@ -4,10 +4,8 @@ import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.DragEvent;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -16,17 +14,12 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
 import com.lanou3g.autohome.R;
-import com.lanou3g.autohome.recommendadapter.DrawerLayoutAdapter;
 import com.lanou3g.autohome.recommendadapter.NewsFlashAdapter;
 import com.lanou3g.autohome.base.BaseFragment;
 import com.lanou3g.autohome.recommendbean.GsonRequest;
 import com.lanou3g.autohome.recommendbean.NewsFlashBean;
-import com.lanou3g.autohome.recommenddetail.NewsDetail;
 import com.lanou3g.autohome.recommenddetail.NewsFlashDetail;
 import com.lanou3g.autohome.utils.DividerItemDecoration;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by dllo on 16/5/9.
@@ -69,12 +62,10 @@ public class NewsFlash extends BaseFragment implements RecyclerViewOnClickListen
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Log.d("NewsFlash", "NewFlash页面拉取数据失败");
                     }
                 }, new Response.Listener<NewsFlashBean>() {
             @Override
             public void onResponse(NewsFlashBean response) {
-                Log.d("NewsFlash", "NewsFlash页面拉取数据成功");
                 adapter.setNewsFlashBean(response);
             }
         }, NewsFlashBean.class);
@@ -90,7 +81,6 @@ public class NewsFlash extends BaseFragment implements RecyclerViewOnClickListen
         String url = "http://cont.app.autohome.com.cn/autov5.0.0/content/News/fastnewscontent-n"+
                 ids+"-lastid0-o1.json";
         intent.putExtra("url", url);
-        Log.d("NewsFlash", url);
         startActivity(intent);
     }
 
@@ -101,7 +91,6 @@ public class NewsFlash extends BaseFragment implements RecyclerViewOnClickListen
                 Intent brandIvIntent = new Intent("com.lanou3g.autohome.OPENNDRAWERLAYOUT");
                 brandIvIntent.putExtra("drawerlayout",2);
                 context.sendBroadcast(brandIvIntent);
-                Log.d("NewsFlash","发送广播");
                 break;
             case R.id.news_flash_brand_tv:
                 Intent brandTvIntent = new Intent("com.lanou3g.autohome.OPENNDRAWERLAYOUT");

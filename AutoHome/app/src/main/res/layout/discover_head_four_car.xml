@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/discover_head_four_car"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="品牌精选"
+        android:layout_margin="@dimen/margin_five"
+        android:textSize="@dimen/text_size_fifteen"/>
+
+    <include layout="@layout/line"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/discover_head_car_first_iv"
+                android:layout_width="192dp"
+                android:layout_height="140dp" />
+
+            <TextView
+                android:id="@+id/discover_head_car_first_title_tv"
+                android:layout_width="182dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/discover_head_car_first_iv"
+                android:layout_marginLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="title"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/discover_head_car_first_short_title_tv"
+                android:layout_width="182dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/discover_head_car_first_title_tv"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:paddingRight="10dp"
+                android:singleLine="true"
+                android:textColor="@color/colorGray"
+                android:text="shorttitle" />
+
+            <TextView
+                android:id="@+id/discover_head_car_first_price_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorRed"
+                android:layout_below="@id/discover_head_car_first_short_title_tv"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="price" />
+
+            <TextView
+                android:id="@+id/discover_head_car_first_fctprice_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/discover_head_car_first_short_title_tv"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/colorGray"
+                android:layout_toRightOf="@id/discover_head_car_first_price_tv"
+                android:text="fctprice" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/discover_head_car_second_iv"
+                android:layout_width="match_parent"
+                android:layout_height="140dp" />
+
+            <TextView
+                android:id="@+id/discover_head_car_second_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/discover_head_car_second_iv"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="title"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/discover_head_car_second_short_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/discover_head_car_second_title_tv"
+                android:layout_margin="10dp"
+                android:singleLine="true"
+                android:textColor="@color/colorGray"
+                android:text="shorttitle" />
+
+            <TextView
+                android:id="@+id/discover_head_car_second_price_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/discover_head_car_second_short_title_tv"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/colorRed"
+                android:text="price" />
+
+            <TextView
+                android:id="@+id/discover_head_car_second_fctprice_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/discover_head_car_second_short_title_tv"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/colorGray"
+                android:layout_toRightOf="@id/discover_head_car_second_price_tv"
+                android:text="fctprice" />
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/discover_head_car_third_iv"
+                android:layout_width="192dp"
+                android:layout_height="140dp" />
+
+            <TextView
+                android:id="@+id/discover_head_car_third_title_tv"
+                android:layout_width="182dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/discover_head_car_third_iv"
+                android:layout_marginLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="title"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/discover_head_car_third_short_title_tv"
+                android:layout_width="182dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/discover_head_car_third_title_tv"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:paddingRight="10dp"
+                android:singleLine="true"
+                android:textColor="@color/colorGray"
+                android:text="shorttitle" />
+
+            <TextView
+                android:id="@+id/discover_head_car_third_price_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/discover_head_car_third_short_title_tv"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/colorRed"
+                android:text="price" />
+
+            <TextView
+                android:id="@+id/discover_head_car_third_fctprice_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/discover_head_car_third_short_title_tv"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/colorGray"
+                android:layout_toRightOf="@id/discover_head_car_third_price_tv"
+                android:text="fctprice" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/discover_head_car_forth_iv"
+                android:layout_width="match_parent"
+                android:layout_height="140dp" />
+
+            <TextView
+                android:id="@+id/discover_head_car_forth_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/discover_head_car_forth_iv"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="title"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/discover_head_car_forth_short_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/discover_head_car_forth_title_tv"
+                android:layout_margin="10dp"
+                android:singleLine="true"
+                android:textColor="@color/colorGray"
+                android:text="shorttitle" />
+
+            <TextView
+                android:id="@+id/discover_head_car_forth_price_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/discover_head_car_forth_short_title_tv"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/colorRed"
+                android:text="price" />
+
+            <TextView
+                android:id="@+id/discover_head_car_forth_fctprice_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/discover_head_car_forth_short_title_tv"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/colorGray"
+                android:layout_toRightOf="@id/discover_head_car_forth_price_tv"
+                android:text="fctprice" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

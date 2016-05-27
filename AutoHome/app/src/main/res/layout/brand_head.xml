@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="@dimen/brand_relative_layout_width"
+        android:layout_height="@dimen/brand_relative_layout_height">
+
+        <ImageView
+            android:id="@+id/brand_head_my_save_iv"
+            android:layout_width="@dimen/brand_head_image_width"
+            android:layout_height="@dimen/brand_head_image_height"
+            android:src="@mipmap/collect1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_five"/>
+        <TextView
+            android:id="@+id/brand_head_my_save_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我的收藏"
+            android:layout_below="@id/brand_head_my_save_iv"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="@dimen/brand_relative_layout_width"
+        android:layout_height="@dimen/brand_relative_layout_height" >
+
+        <ImageView
+            android:id="@+id/brand_head_history_iv"
+            android:layout_width="@dimen/brand_head_image_width"
+            android:layout_height="@dimen/brand_head_image_height"
+            android:src="@mipmap/history1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_five"/>
+        <TextView
+            android:id="@+id/brand_head_history_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="浏览历史"
+            android:layout_below="@id/brand_head_history_iv"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="@dimen/brand_relative_layout_width"
+        android:layout_height="@dimen/brand_relative_layout_height"
+        android:layout_marginRight="@dimen/margin_ten">
+
+        <ImageView
+            android:id="@+id/brand_head_hot_iv"
+            android:layout_width="@dimen/brand_head_image_width"
+            android:layout_height="@dimen/brand_head_image_height"
+            android:src="@mipmap/ranking1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_five"/>
+        <TextView
+            android:id="@+id/brand_head_hot_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="热销排行"
+            android:layout_below="@id/brand_head_hot_iv"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+</LinearLayout>

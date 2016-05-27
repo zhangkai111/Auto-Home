@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="主打车"
+        android:layout_margin="@dimen/margin_five"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="@dimen/brand_relative_layout_width"
+        android:layout_height="@dimen/brand_relative_layout_height_otz">
+
+        <ImageView
+            android:id="@+id/brand_head_main_first_iv"
+            android:layout_width="@dimen/brand_relative_layout_width"
+            android:layout_height="@dimen/hundred"/>
+
+        <TextView
+            android:id="@+id/brand_head_main_first_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/brand_head_main_first_iv"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="@dimen/brand_relative_layout_height_otz"
+        android:layout_height="@dimen/brand_relative_layout_height_otz">
+
+        <ImageView
+            android:id="@+id/brand_head_main_second_iv"
+            android:layout_width="@dimen/brand_relative_layout_width"
+            android:layout_height="@dimen/hundred"/>
+
+        <TextView
+            android:id="@+id/brand_head_main_second_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/brand_head_main_second_iv"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="@dimen/brand_relative_layout_width"
+        android:layout_height="@dimen/brand_relative_layout_height_otz">
+
+        <ImageView
+            android:id="@+id/brand_head_main_third_iv"
+            android:layout_width="@dimen/brand_relative_layout_width"
+            android:layout_height="@dimen/hundred"/>
+
+        <TextView
+            android:id="@+id/brand_head_main_third_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/brand_head_main_third_iv"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+        </LinearLayout>
+</LinearLayout>

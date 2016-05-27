@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <include layout="@layout/view"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    <!-- 热门品牌-->
+    <TextView
+        android:id="@+id/brand_head_hot_brand_title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_margin="5dp"
+        android:text="热门品牌"/>
+
+    </RelativeLayout>
+    <include layout="@layout/line"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="@dimen/width_sixty"
+            android:layout_height="@dimen/seventy"
+            android:layout_margin="@dimen/margin_six"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/brand_hot_public_iv"
+                android:layout_width="@dimen/fifty"
+                android:layout_height="@dimen/fifty"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:id="@+id/brand_hot_public_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/brand_hot_public_iv"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="@dimen/width_sixty"
+            android:layout_height="@dimen/seventy"
+            android:layout_margin="@dimen/margin_six"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/brand_hot_honda_iv"
+                android:layout_width="@dimen/fifty"
+                android:layout_height="@dimen/fifty"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:id="@+id/brand_hot_honda_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/brand_hot_honda_iv"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="@dimen/width_sixty"
+            android:layout_height="@dimen/seventy"
+            android:layout_margin="@dimen/margin_six"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/brand_hot_toyota_iv"
+                android:layout_width="@dimen/fifty"
+                android:layout_height="@dimen/fifty"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:id="@+id/brand_hot_toyota_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/brand_hot_toyota_iv"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="@dimen/width_sixty"
+            android:layout_height="@dimen/fifty"
+            android:layout_margin="@dimen/margin_six"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/brand_hot_now_iv"
+                android:layout_width="@dimen/fifty"
+                android:layout_height="@dimen/fifty"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:id="@+id/brand_hot_now_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/brand_hot_now_iv"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="@dimen/width_sixty"
+            android:layout_height="@dimen/seventy"
+            android:layout_margin="@dimen/margin_six"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/brand_hot_jili_iv"
+                android:layout_width="@dimen/fifty"
+                android:layout_height="@dimen/fifty"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:id="@+id/brand_hot_jili_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/brand_hot_jili_iv"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="@dimen/width_sixty"
+            android:layout_height="@dimen/fifty"
+            android:layout_margin="@dimen/margin_six"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/brand_hot_ford_iv"
+                android:layout_width="@dimen/fifty"
+                android:layout_height="@dimen/fifty"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:id="@+id/brand_hot_ford_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/brand_hot_ford_iv"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="@dimen/width_sixty"
+            android:layout_height="@dimen/seventy"
+            android:layout_margin="@dimen/margin_six"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/brand_hot_audi_iv"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:id="@+id/brand_hot_audi_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/brand_hot_audi_iv"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="@dimen/width_sixty"
+            android:layout_height="@dimen/seventy"
+            android:layout_margin="@dimen/margin_six"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/brand_hot_nissan_iv"
+                android:layout_width="@dimen/fifty"
+                android:layout_height="@dimen/fifty"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:id="@+id/brand_hot_nissan_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/brand_hot_nissan_iv"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="@dimen/width_sixty"
+            android:layout_height="@dimen/seventy"
+            android:layout_margin="@dimen/margin_six"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/brand_hot_haver_iv"
+                android:layout_width="@dimen/fifty"
+                android:layout_height="@dimen/fifty"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:id="@+id/brand_hot_haver_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/brand_hot_haver_iv"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="@dimen/width_sixty"
+            android:layout_height="@dimen/seventy"
+            android:layout_margin="@dimen/margin_six"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/brand_hot_kia_iv"
+                android:layout_width="@dimen/fifty"
+                android:layout_height="@dimen/fifty"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:id="@+id/brand_hot_kia_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/brand_hot_kia_iv"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+    </LinearLayout>
+    <include layout="@layout/view"/>
+</LinearLayout>

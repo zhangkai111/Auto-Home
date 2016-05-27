@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/detail_collect_return_iv"
+            android:layout_width="25dp"
+            android:layout_height="15dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/leftarrow" />
+
+        <TextView
+            android:id="@+id/detail_collect_return_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/detail_collect_return_iv"
+            android:text="返回"
+            android:textColor="@color/textColorBlue"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/detail_collect_share_iv"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ahlib_nav_share"/>
+
+        <ImageView
+            android:id="@+id/detail_collect_collect_iv"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:layout_toLeftOf="@id/detail_collect_share_iv"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/collectblue"/>
+
+    </RelativeLayout>
+
+    <WebView
+        android:id="@+id/news_detail_wv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layerType="software" />
+</LinearLayout>

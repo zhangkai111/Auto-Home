@@ -1,14 +1,11 @@
 package com.lanou3g.autohome.recommendfragment;
 
 import android.content.Intent;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -18,15 +15,11 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
 import com.lanou3g.autohome.R;
 import com.lanou3g.autohome.base.BaseFragment;
-import com.lanou3g.autohome.recommendadapter.DrawerLayoutAdapter;
 import com.lanou3g.autohome.recommendbean.GsonRequest;
 import com.lanou3g.autohome.recommendbean.VideoBean;
 import com.lanou3g.autohome.recommendadapter.VideoAdapter;
-import com.lanou3g.autohome.recommenddetail.NewsDetail;
+import com.lanou3g.autohome.recommenddetail.Detail;
 import com.lanou3g.autohome.utils.DividerItemDecoration;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by dllo on 16/5/9.
@@ -63,12 +56,10 @@ public class Video extends BaseFragment implements RecyclerViewOnClickListener {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Log.d("Video", "Video获取数据失败");
                     }
                 }, new Response.Listener<VideoBean>() {
             @Override
             public void onResponse(VideoBean response) {
-                Log.d("Video", "Video获取数据成功");
                 videoAdapter.setVideoBean(response);
             }
         },VideoBean.class);
@@ -99,7 +90,7 @@ public class Video extends BaseFragment implements RecyclerViewOnClickListener {
 
     @Override
     public void onClick(int ids) {
-        Intent intent = new Intent(context, NewsDetail.class);
+        Intent intent = new Intent(context, Detail.class);
         intent.setAction(Intent.ACTION_VIEW);
         String url = "http://v.autohome.com.cn/v_4_"+
                 ids +".html";

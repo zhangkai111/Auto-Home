@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.lanou3g.demo.MainActivity">
+    tools:context="com.lanou3g.autohome.main.MainActivity">
 
 
     <LinearLayout
@@ -26,62 +26,61 @@
 
         <RadioGroup
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:orientation="horizontal"
-            android:paddingLeft="@dimen/item_horizontal_padding"
-            android:paddingRight="@dimen/item_horizontal_padding">
+            android:layout_height="@dimen/radio_group_height"
+            android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/main_recommend_rb"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/radio_group_height"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:background="@drawable/recommend"
                 android:button="@null"
-                android:gravity="center" />
+                android:checked="true"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/margin_fifteen"/>
 
             <RadioButton
                 android:id="@+id/main_forum_rb"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/radio_group_height"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:background="@drawable/forum"
-                android:button="@null" />
+                android:button="@null"
+                android:layout_marginLeft="@dimen/margin_twenty"/>
 
             <RadioButton
                 android:id="@+id/main_findcar_rb"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/radio_group_height"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:background="@drawable/findcar"
-                android:button="@null" />
+                android:button="@null"
+                android:layout_marginLeft="@dimen/margin_twenty"/>
 
             <RadioButton
                 android:id="@+id/main_discover_rb"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/radio_group_height"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:background="@drawable/discover"
-                android:button="@null" />
+                android:button="@null"
+                android:layout_marginLeft="@dimen/margin_twenty"/>
 
             <RadioButton
                 android:id="@+id/main_person_rb"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/radio_group_height"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:background="@drawable/person"
-                android:button="@null" />
+                android:button="@null"
+                android:layout_marginLeft="@dimen/margin_twenty"/>
         </RadioGroup>
     </LinearLayout>
 
     <RelativeLayout
-        android:layout_width="300dp"
+        android:layout_width="@dimen/drawer_layout_width"
         android:layout_height="match_parent"
         android:layout_gravity="right"
         android:background="#dfff"
         android:choiceMode="singleChoice"
         android:divider="@android:color/transparent"
-        android:dividerHeight="0dp"
+        android:dividerHeight="0.2dp"
         android:orientation="vertical">
 
         <TextView
