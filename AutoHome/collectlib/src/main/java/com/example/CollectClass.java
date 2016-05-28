@@ -33,7 +33,6 @@ public class CollectClass {
         entity.addIdProperty().autoincrement().primaryKey();
         //添加类的属性,根据属性生成相应表中的字段
         entity.addStringProperty("url");
-        entity.addStringProperty("imageUrl");
         entity.addStringProperty("title");
         entity.addStringProperty("time");
     }

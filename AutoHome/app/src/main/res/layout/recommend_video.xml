@@ -25,8 +25,8 @@
                 android:src="@mipmap/drawerlayout_icon_btn" />
         </LinearLayout>
 
-        <com.handmark.pulltorefresh.library.PullToRefreshListView
-            android:id="@+id/recommend_video_lv"
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recommend_video_rv"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1" />

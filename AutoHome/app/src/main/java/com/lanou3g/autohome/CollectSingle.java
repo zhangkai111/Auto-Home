@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import com.lanou3g.autohome.base.MyApplication;
 
 /**
- * Created by dllo on 16/5/28.
+ * Created by dllo on 16/5/26.
  */
 public class CollectSingle {
 
@@ -19,36 +19,36 @@ public class CollectSingle {
 
 
     public DaoMaster.DevOpenHelper getHelper() {
-        if (helper == null) {
-            helper = new DaoMaster.DevOpenHelper(context, "Collect.db", null);
+        if (helper == null){
+            helper = new DaoMaster.DevOpenHelper(context,"Collect.db",null);
         }
         return helper;
     }
 
 
     public SQLiteDatabase getDb() {
-        if (db == null) {
+        if (db == null){
             db = getHelper().getWritableDatabase();
         }
         return db;
     }
 
     public DaoMaster getDaoMaster() {
-        if (daoMaster == null) {
+        if (daoMaster == null){
             daoMaster = new DaoMaster(getDb());
         }
         return daoMaster;
     }
 
     public DaoSession getDaoSession() {
-        if (daoSession == null) {
+        if (daoSession == null){
             daoSession = getDaoMaster().newSession();
         }
         return daoSession;
     }
 
     public CollectDao getCollectDao() {
-        if (collectDao == null) {
+        if (collectDao == null){
             collectDao = getDaoSession().getCollectDao();
         }
         return collectDao;
@@ -64,5 +64,4 @@ public class CollectSingle {
 
         context = MyApplication.getContext();
     }
-
 }

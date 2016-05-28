@@ -10,18 +10,18 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/aty_my_collect_return_iv"
+            android:id="@+id/my_collect_return_iv"
             android:layout_width="25dp"
             android:layout_height="15dp"
             android:layout_centerVertical="true"
             android:src="@mipmap/leftarrow"/>
 
         <TextView
-            android:id="@+id/aty_my_collect_return_tv"
+            android:id="@+id/my_collect_return_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/aty_my_collect_return_iv"
+            android:layout_toRightOf="@id/my_collect_return_iv"
             android:text="返回"
             android:textColor="@color/textColorBlue"
             android:textSize="15sp" />
@@ -37,7 +37,6 @@
     <include layout="@layout/line"/>
 
     <ListView
-        android:id="@+id/aty_my_collect_lv"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />

@@ -6,7 +6,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,12 +18,17 @@ import it.sephiroth.android.library.picasso.Picasso;
 /**
  * Created by dllo on 16/5/11.
  */
-public class NewsFlashAdapter extends BaseAdapter {
+public class NewsFlashAdapter extends RecyclerView.Adapter {
 
     private NewsFlashBean newsFlashBean;
     private Context context;
+    private RecyclerViewOnClickListener recyclerViewOnClickListener;
     public static final int STATE = 2;
     public static final int STATEZERO = 0;
+
+    public void setRecyclerViewOnClickListener(RecyclerViewOnClickListener recyclerViewOnClickListener) {
+        this.recyclerViewOnClickListener = recyclerViewOnClickListener;
+    }
 
     public void setNewsFlashBean(NewsFlashBean newsFlashBean) {
         this.newsFlashBean = newsFlashBean;
@@ -41,32 +45,18 @@ public class NewsFlashAdapter extends BaseAdapter {
     }
 
     @Override
-    public int getCount() {
-        return newsFlashBean == null ? 0 : newsFlashBean.getResult().getList().size();
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        RecyclerView.ViewHolder viewHolder = null;
+        View view = LayoutInflater.from(context).inflate(R.layout.newsflash_item, parent, false);
+        viewHolder = new ItemViewHolder(view);
+        return viewHolder;
     }
 
     @Override
-    public Object getItem(int position) {
-        return null;
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return 0;
-    }
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        ItemViewHolder itemViewHolder = null;
-        if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.newsflash_item, null);
-            itemViewHolder = new ItemViewHolder(convertView);
-            convertView.setTag(itemViewHolder);
-        }else {
-            itemViewHolder = (ItemViewHolder) convertView.getTag();
-        }
+    public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
         int viewType = getItemViewType(position);
         String url = newsFlashBean.getResult().getList().get(position).getBgimage();
+        final ItemViewHolder itemViewHolder = (ItemViewHolder) holder;
         itemViewHolder.typeNameTv.setText(newsFlashBean.getResult().getList().get(position).getTypename());
         if (viewType == STATE) {
             itemViewHolder.stateTv.setBackgroundColor(Color.GRAY);
@@ -82,22 +72,36 @@ public class NewsFlashAdapter extends BaseAdapter {
         itemViewHolder.timeTv.setText(newsFlashBean.getResult().getList().get(position).getCreatetime());
         itemViewHolder.reviewcountTv.setText(newsFlashBean.getResult().getList().get(position).getReviewcount() + "人浏览");
         setImage(itemViewHolder.imageView, url);
-
-        return convertView;
+        if (recyclerViewOnClickListener != null) {
+            itemViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int pos = holder.getLayoutPosition();
+                    int ids = newsFlashBean.getResult().getList().get(pos).getId();
+                    recyclerViewOnClickListener.onClick(ids);
+                }
+            });
+        }
     }
 
+    @Override
+    public int getItemCount() {
+        return newsFlashBean == null ? 0 : newsFlashBean.getResult().getList().size();
+    }
 
     //获取网络并设置图片的方法
     private void setImage(ImageView iconIv, String url) {
+
         Picasso.with(context).load(url).into(iconIv);
     }
 
-    class ItemViewHolder {
+    class ItemViewHolder extends RecyclerView.ViewHolder {
 
         TextView typeNameTv, stateTv, titleTv, reviewcountTv, timeTv;
         ImageView imageView;
 
         public ItemViewHolder(View itemView) {
+            super(itemView);
             typeNameTv = (TextView) itemView.findViewById(R.id.news_flash_item_typename_tv);
             stateTv = (TextView) itemView.findViewById(R.id.news_flash_item_state_tv);
             titleTv = (TextView) itemView.findViewById(R.id.news_flash_item_title_tv);
