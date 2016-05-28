@@ -3,6 +3,7 @@ package com.lanou3g.autohome.fragment;
 import android.content.Intent;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.lanou3g.autohome.mycollect.MyCollectActivity;
 import com.lanou3g.autohome.R;
@@ -14,7 +15,7 @@ import com.lanou3g.autohome.base.BaseFragment;
  */
 public class PersonFragment extends BaseFragment implements View.OnClickListener {
 
-    private LinearLayout myCollectLayout;
+    private RelativeLayout myCollectLayout;
 
     @Override
     public int initLayout() {
@@ -24,7 +25,7 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
     @Override
     public void initView() {
 
-        myCollectLayout = bindView(R.id.fragment_person_layout);
+        myCollectLayout = bindView(R.id.fragment_person_collect_layout);
         myCollectLayout.setOnClickListener(this);
     }
 
@@ -36,7 +37,7 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.fragment_person_layout:
+            case R.id.fragment_person_collect_layout:
                 Intent intent = new Intent(context, MyCollectActivity.class);
                 startActivity(intent);
                 break;

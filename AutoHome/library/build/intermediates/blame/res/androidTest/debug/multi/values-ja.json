@@ -11,7 +11,14 @@
                     "endOffset": 115
                 },
                 "from": {
-                    "file": "/Users/dllo/Desktop/githubspace/Auto-Home/AutoHome/library/build/intermediates/bundles/debug/res/values-ja/values-ja.xml"
+                    "file": "/Users/dllo/Desktop/githubspace/Auto-Home/AutoHome/library/build/intermediates/bundles/debug/res/values-ja/values-ja.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 64,
+                        "endOffset": 115
+                    }
                 }
             },
             {
@@ -23,7 +30,14 @@
                     "endOffset": 183
                 },
                 "from": {
-                    "file": "/Users/dllo/Desktop/githubspace/Auto-Home/AutoHome/library/build/intermediates/bundles/debug/res/values-ja/values-ja.xml"
+                    "file": "/Users/dllo/Desktop/githubspace/Auto-Home/AutoHome/library/build/intermediates/bundles/debug/res/values-ja/values-ja.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 120,
+                        "endColumn": 67,
+                        "endOffset": 183
+                    }
                 }
             },
             {
@@ -35,7 +49,14 @@
                     "endOffset": 250
                 },
                 "from": {
-                    "file": "/Users/dllo/Desktop/githubspace/Auto-Home/AutoHome/library/build/intermediates/bundles/debug/res/values-ja/values-ja.xml"
+                    "file": "/Users/dllo/Desktop/githubspace/Auto-Home/AutoHome/library/build/intermediates/bundles/debug/res/values-ja/values-ja.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 188,
+                        "endColumn": 66,
+                        "endOffset": 250
+                    }
                 }
             },
             {

@@ -486,7 +486,7 @@ public class DiscoverFragment extends BaseFragment implements AdapterView.OnItem
         if (position > 3) {
             Intent intent = new Intent(context, Detail.class);
             intent.setAction(Intent.ACTION_VIEW);
-            String url = discoverBean.getResult().getGoodslist().getList().get(position - 4).getMurl();
+            String url = discoverBean.getResult().getGoodslist().getList().get(position - 5).getMurl();
             intent.putExtra("url", url);
             startActivity(intent);
         }
