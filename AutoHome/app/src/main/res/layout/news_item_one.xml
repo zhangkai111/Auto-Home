@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/news_item_one_iv"
         android:padding="@dimen/item_normal_padding"
-        android:textSize="15sp"
+        android:textSize="@dimen/text_size_fifteen"
         android:text="title"/>
 
     <RelativeLayout

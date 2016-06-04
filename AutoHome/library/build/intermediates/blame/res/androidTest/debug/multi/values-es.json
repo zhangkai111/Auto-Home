@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/dllo/Desktop/githubspace/Auto-Home/AutoHome/library/build/intermediates/res/merged/androidTest/debug/values-es/values-es.xml",
+        "outputFile": "C:\\Users\\samsung\\Desktop\\6.2\\6.2\\AutoHome\\AutoHome\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-es\\values-es.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 128
                 },
                 "from": {
-                    "file": "/Users/dllo/Desktop/githubspace/Auto-Home/AutoHome/library/build/intermediates/bundles/debug/res/values-es/values-es.xml",
+                    "file": "C:\\Users\\samsung\\Desktop\\6.2\\6.2\\AutoHome\\AutoHome\\library\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -30,7 +30,7 @@
                     "endOffset": 199
                 },
                 "from": {
-                    "file": "/Users/dllo/Desktop/githubspace/Auto-Home/AutoHome/library/build/intermediates/bundles/debug/res/values-es/values-es.xml",
+                    "file": "C:\\Users\\samsung\\Desktop\\6.2\\6.2\\AutoHome\\AutoHome\\library\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -49,7 +49,69 @@
                     "endOffset": 281
                 },
                 "from": {
-                    "file": "/Users/dllo/Desktop/githubspace/Auto-Home/AutoHome/library/build/intermediates/bundles/debug/res/values-es/values-es.xml",
+                    "file": "C:\\Users\\samsung\\Desktop\\6.2\\6.2\\AutoHome\\AutoHome\\library\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 204,
+                        "endColumn": 81,
+                        "endOffset": 281
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\dllo\\Desktop\\Apple\\5.30\\AutoHome\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-es\\values-es.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 77,
+                    "endOffset": 128
+                },
+                "from": {
+                    "file": "C:\\Users\\dllo\\Desktop\\Apple\\5.30\\AutoHome\\library\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 77,
+                        "endOffset": 128
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 133,
+                    "endColumn": 70,
+                    "endOffset": 199
+                },
+                "from": {
+                    "file": "C:\\Users\\dllo\\Desktop\\Apple\\5.30\\AutoHome\\library\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 133,
+                        "endColumn": 70,
+                        "endOffset": 199
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 204,
+                    "endColumn": 81,
+                    "endOffset": 281
+                },
+                "from": {
+                    "file": "C:\\Users\\dllo\\Desktop\\Apple\\5.30\\AutoHome\\library\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

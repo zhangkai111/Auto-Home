@@ -10,26 +10,26 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/my_collect_return_iv"
-            android:layout_width="25dp"
-            android:layout_height="15dp"
+            android:id="@+id/aty_my_collect_return_iv"
+            android:layout_width="@dimen/return_iv_width"
+            android:layout_height="@dimen/return_iv_height"
             android:layout_centerVertical="true"
             android:src="@mipmap/leftarrow"/>
 
         <TextView
-            android:id="@+id/my_collect_return_tv"
+            android:id="@+id/aty_my_collect_return_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/my_collect_return_iv"
-            android:text="返回"
+            android:layout_toRightOf="@id/aty_my_collect_return_iv"
+            android:text="@string/return_text"
             android:textColor="@color/textColorBlue"
-            android:textSize="15sp" />
+            android:textSize="@dimen/text_size_fifteen" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="我的收藏"
-            android:textSize="20sp"
+            android:textSize="@dimen/text_size_twenty"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"/>
     </RelativeLayout>
@@ -37,6 +37,7 @@
     <include layout="@layout/line"/>
 
     <ListView
+        android:id="@+id/aty_my_collect_lv"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />

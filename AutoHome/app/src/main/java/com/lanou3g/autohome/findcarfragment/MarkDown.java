@@ -1,6 +1,5 @@
 package com.lanou3g.autohome.findcarfragment;
 
-import android.content.Context;
 import android.widget.ListView;
 
 import com.android.volley.Request;

@@ -25,8 +25,9 @@ public class CollectDao extends AbstractDao<Collect, Long> {
     public static class Properties {
         public final static Property Id = new Property(0, Long.class, "id", true, "_id");
         public final static Property Url = new Property(1, String.class, "url", false, "URL");
-        public final static Property Title = new Property(2, String.class, "title", false, "TITLE");
-        public final static Property Time = new Property(3, String.class, "time", false, "TIME");
+        public final static Property ImageUrl = new Property(2, String.class, "imageUrl", false, "IMAGE_URL");
+        public final static Property Title = new Property(3, String.class, "title", false, "TITLE");
+        public final static Property Time = new Property(4, String.class, "time", false, "TIME");
     };
 
 
@@ -44,8 +45,9 @@ public class CollectDao extends AbstractDao<Collect, Long> {
         db.execSQL("CREATE TABLE " + constraint + "\"COLLECT\" (" + //
                 "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: id
                 "\"URL\" TEXT," + // 1: url
-                "\"TITLE\" TEXT," + // 2: title
-                "\"TIME\" TEXT);"); // 3: time
+                "\"IMAGE_URL\" TEXT," + // 2: imageUrl
+                "\"TITLE\" TEXT," + // 3: title
+                "\"TIME\" TEXT);"); // 4: time
     }
 
     /** Drops the underlying database table. */
@@ -69,14 +71,19 @@ public class CollectDao extends AbstractDao<Collect, Long> {
             stmt.bindString(2, url);
         }
  
+        String imageUrl = entity.getImageUrl();
+        if (imageUrl != null) {
+            stmt.bindString(3, imageUrl);
+        }
+ 
         String title = entity.getTitle();
         if (title != null) {
-            stmt.bindString(3, title);
+            stmt.bindString(4, title);
         }
  
         String time = entity.getTime();
         if (time != null) {
-            stmt.bindString(4, time);
+            stmt.bindString(5, time);
         }
     }
 
@@ -92,8 +99,9 @@ public class CollectDao extends AbstractDao<Collect, Long> {
         Collect entity = new Collect( //
             cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0), // id
             cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // url
-            cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // title
-            cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3) // time
+            cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // imageUrl
+            cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // title
+            cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4) // time
         );
         return entity;
     }
@@ -103,8 +111,9 @@ public class CollectDao extends AbstractDao<Collect, Long> {
     public void readEntity(Cursor cursor, Collect entity, int offset) {
         entity.setId(cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0));
         entity.setUrl(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
-        entity.setTitle(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
-        entity.setTime(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
+        entity.setImageUrl(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
+        entity.setTitle(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
+        entity.setTime(cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4));
      }
     
     /** @inheritdoc */

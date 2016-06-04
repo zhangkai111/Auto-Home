@@ -6,21 +6,21 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp">
+        android:layout_height="@dimen/forty">
 
         <RelativeLayout
             android:id="@+id/findcar_markdown_brand_rl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_margin="10dp">
+            android:layout_margin="@dimen/margin_ten">
 
             <TextView
                 android:id="@+id/findcar_markdown_brand_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="品牌" />
+                android:text="@string/brand" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/margin_ten"
             android:layout_toRightOf="@id/findcar_markdown_brand_rl">
 
 
@@ -46,7 +46,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="价格" />
+                android:text="@string/price" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -61,7 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/margin_ten"
             android:layout_toRightOf="@id/findcar_markdown_price_rl">
 
             <TextView
@@ -69,7 +69,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="级别" />
+                android:text="@string/level" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -84,7 +84,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/margin_ten"
             android:layout_toRightOf="@id/findcar_markdown_level_rl">
 
             <TextView
@@ -92,7 +92,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="排序" />
+                android:text="@string/order" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -107,7 +107,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/margin_ten"
             android:layout_toRightOf="@id/findcar_markdown_order_rl">
 
             <TextView
@@ -115,7 +115,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="北京" />
+                android:text="@string/beijing" />
 
             <ImageView
                 android:layout_width="wrap_content"

@@ -1,6 +1,7 @@
 package com.lanou3g.autohome.recommendfragment;
 
 import android.content.Intent;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -12,10 +13,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
 import com.lanou3g.autohome.R;
 import com.lanou3g.autohome.base.BaseFragment;
+import com.lanou3g.autohome.forumselectiondetail.AllDetail;
 import com.lanou3g.autohome.recommendadapter.UseCarAdapter;
 import com.lanou3g.autohome.recommendbean.GsonRequest;
 import com.lanou3g.autohome.recommendbean.UseCarBean;
-import com.lanou3g.autohome.recommenddetail.Detail;
 import com.lanou3g.autohome.utils.DividerItemDecoration;
 
 /**
@@ -36,6 +37,7 @@ public class UseCar extends BaseFragment implements RecyclerViewOnClickListener 
     public void initView() {
         recyclerView = bindView(R.id.recommend_usecar_rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
+        //recyclerView.setLayoutManager(new GridLayoutManager(context,3));
         recyclerView.addItemDecoration(new DividerItemDecoration(context, DividerItemDecoration.VERTICAL_LIST));
         adapter = new UseCarAdapter(context);
     }
@@ -67,7 +69,7 @@ public class UseCar extends BaseFragment implements RecyclerViewOnClickListener 
 
     @Override
     public void onClick(int ids) {
-        Intent intent = new Intent(new Intent(context, Detail.class));
+        Intent intent = new Intent(new Intent(context, AllDetail.class));
         intent.setAction(Intent.ACTION_VIEW);
         int viewType = adapter.getItemViewType(ids);
         String url = "";

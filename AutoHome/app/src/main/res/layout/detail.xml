@@ -10,8 +10,8 @@
 
         <ImageView
             android:id="@+id/detail_collect_return_iv"
-            android:layout_width="25dp"
-            android:layout_height="15dp"
+            android:layout_width="@dimen/return_iv_width"
+            android:layout_height="@dimen/return_iv_height"
             android:layout_centerVertical="true"
             android:src="@mipmap/leftarrow" />
 
@@ -21,22 +21,22 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@id/detail_collect_return_iv"
-            android:text="返回"
+            android:text="@string/return_text"
             android:textColor="@color/textColorBlue"
-            android:textSize="15sp" />
+            android:textSize="@dimen/text_size_fifteen" />
 
         <ImageView
             android:id="@+id/detail_collect_share_iv"
-            android:layout_width="30dp"
-            android:layout_height="25dp"
+            android:layout_width="@dimen/width_thirty"
+            android:layout_height="@dimen/height_twenty_five"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:src="@mipmap/ahlib_nav_share"/>
 
         <ImageView
             android:id="@+id/detail_collect_collect_iv"
-            android:layout_width="30dp"
-            android:layout_height="25dp"
+            android:layout_width="@dimen/width_thirty"
+            android:layout_height="@dimen/height_twenty_five"
             android:layout_toLeftOf="@id/detail_collect_share_iv"
             android:layout_centerVertical="true"
             android:src="@mipmap/collectblue"/>

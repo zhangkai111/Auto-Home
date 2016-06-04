@@ -15,6 +15,12 @@
     <string name="updated_just_now">刚刚更新</string>
     <string name="time_error">时间有问题</string>
 
+    <!-- 登录页面-->
+    <string name="user_name_et_hint">手机号/邮箱/用户名</string>
+    <string name="user_password_et_hint">密码</string>
+    <string name="login_btn_text">登录</string>
+    <string name="center_text">还可以用以下方式登录</string>
+    <string name="forget_password">忘记密码</string>
 
     <string name="hello">Hello World, JPush!</string>
     <string name="tag_hint">Tag为大小写字母，数字，下划线,中文， 多个用以逗号分隔</string>
@@ -27,5 +33,42 @@
     <string name="error_network">网络连接异常,初始化失败 请检查网络！</string>
     <string name="logining">程序在后台执行, 请查看日志！</string>
     <string name="setting_su">设置成功</string>
+
+    <!--aty_my_collect-->
+    <string name="return_text">返回</string>
+
+    <string name="brand_head_title_hot">热销排行</string>
+
+    <string name="main_car">主打车</string>
+
+    <string name="aty_text">活动专区</string>
+
+    <string name="condition">条件</string>
+
+    <string name="hot_car">热门车系</string>
+    <string name="brand">品牌</string>
+    <string name="price">价格</string>
+    <string name="level">级别</string>
+    <string name="order">排序</string>
+    <string name="beijing">北京</string>
+
+    <string name="forum_common_car">车系论坛</string>
+    <string name="forum_common_car_content">为你的爱车找到队伍</string>
+    <string name="forum_forum">地区论坛</string>
+    <string name="forum_forum_content">老乡见老乡,两眼泪汪汪</string>
+    <string name="forum_them">主题论坛</string>
+    <string name="forum_them_content">兴趣爱好聚集地</string>
+
+    <!--person-->
+    <string name="user_login_text">账号登录</string>
+    <string name="qq_login_text">QQ登录</string>
+    <string name="webo_login_text">微博登录</string>
+    <string name="wechat_login_text">微信登录</string>
+    <string name="coupon">我的优惠券</string>
+    <string name="collect">我的收藏</string>
+    <string name="history">浏览历史</string>
+    <string name="draft">草稿箱</string>
+    <string name="set">设置</string>
+    <string name="nologin">未登录</string>
 
 </resources>

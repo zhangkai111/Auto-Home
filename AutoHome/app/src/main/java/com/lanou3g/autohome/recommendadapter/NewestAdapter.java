@@ -64,6 +64,7 @@ public class NewestAdapter extends BaseAdapter {
         ThreeImageViewHolder threeImageViewHolder = null;
         OneImageViewHolder oneImageViewHolder = null;
 
+        //通过ViewType来判断加载不同布局
         if (convertView == null) {
             switch (viewType) {
                 case 6:

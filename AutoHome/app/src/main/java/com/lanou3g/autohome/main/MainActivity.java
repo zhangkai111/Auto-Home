@@ -4,19 +4,16 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
 import android.view.View;
-import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.lanou3g.autohome.R;
 import com.lanou3g.autohome.base.BaseActivity;
@@ -46,6 +43,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     private DrawerLayoutAdapter drawerLayoutAdapter;
     private TextView drawerLayoutTitleTv;
     public static boolean isForeground = false;
+    private List<Fragment> fragments;
+    private FragmentManager manager;
+    private FragmentTransaction transaction;
 
     @Override
     protected int getLayout() {
@@ -65,6 +65,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         discoverRb = bindView(R.id.main_discover_rb);
         personRb = bindView(R.id.main_person_rb);
         drawerLayout = bindView(R.id.video_all_right_drawerlayout);
+
+
 
         //注册打开抽屉的广播
         drawerLayoutBroadcast = new DrawerLayoutBroadcast();
@@ -132,48 +134,86 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
     @Override
     protected void initData() {
-        //在onCreate中,替换首页
-        //保证第一次进入界面,显示的不是占位布局
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        //设置首页为推荐页面
+        manager = getSupportFragmentManager();
+        transaction = manager.beginTransaction();
+        fragments = new ArrayList<>();
+        fragments.add(new RecommendFragment());
+        fragments.add(new ForumFragment());
+        fragments.add(new FindCarFragment());
+        fragments.add(new DiscoverFragment());
+        fragments.add(new PersonFragment());
+        //首次进入的时候，让第一个fragment显示，也就是推荐页显示
+        manager.beginTransaction()
+                .add(R.id.main_replace__framelayout, fragments.get(0))
+                .add(R.id.main_replace__framelayout, fragments.get(1))
+                .add(R.id.main_replace__framelayout, fragments.get(2))
+                .add(R.id.main_replace__framelayout, fragments.get(3))
+                .add(R.id.main_replace__framelayout, fragments.get(4))
+                .show(fragments.get(0))
+                .hide(fragments.get(1))
+                .hide(fragments.get(2))
+                .hide(fragments.get(3))
+                .hide(fragments.get(4))
+                .commit();
 
-        fragmentTransaction.replace(R.id.main_activity_framelayout, new RecommendFragment());
-        fragmentTransaction.commit();
+
+//        //在onCreate中,替换首页
+//        //保证第一次进入界面,显示的不是占位布局
+//        FragmentManager fragmentManager = getSupportFragmentManager();
+//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//
+//        fragmentTransaction.replace(R.id.main_activity_framelayout, new RecommendFragment());
+//        fragmentTransaction.commit();
 
         registerMessageReceiver();  // used for receive msg
     }
 
     @Override
     public void onClick(View v) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
+//        FragmentManager fragmentManager = getSupportFragmentManager();
+//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        manager = getSupportFragmentManager();
+        transaction = manager.beginTransaction();
         //设置五个RadioButton的点击事件替换Fragment
         switch (v.getId()) {
             case R.id.main_recommend_rb:
-                fragmentTransaction.replace(R.id.main_activity_framelayout, new RecommendFragment());
+//                fragmentTransaction.replace(R.id.main_activity_framelayout, new RecommendFragment());
+                changeFragment(0);
                 break;
 
             case R.id.main_forum_rb:
-                fragmentTransaction.replace(R.id.main_activity_framelayout, new ForumFragment());
-
+//                fragmentTransaction.replace(R.id.main_activity_framelayout, new ForumFragment());
+                changeFragment(1);
                 break;
             case R.id.main_findcar_rb:
-                fragmentTransaction.replace(R.id.main_activity_framelayout, new FindCarFragment());
-
+//                fragmentTransaction.replace(R.id.main_activity_framelayout, new FindCarFragment());
+                changeFragment(2);
                 break;
             case R.id.main_discover_rb:
-                fragmentTransaction.replace(R.id.main_activity_framelayout, new DiscoverFragment());
-
+//                fragmentTransaction.replace(R.id.main_activity_framelayout, new DiscoverFragment());
+                changeFragment(3);
                 break;
             case R.id.main_person_rb:
-                fragmentTransaction.replace(R.id.main_activity_framelayout, new PersonFragment());
-
+//                fragmentTransaction.replace(R.id.main_activity_framelayout, new PersonFragment());
+                changeFragment(4);
                 break;
         }
 
-        fragmentTransaction.commit();
+        transaction.commit();
 
+    }
+
+    //设置所有的fragment都是隐藏的，点击那个位置的fragment就让那个位置的fragment显示
+    private void changeFragment(int pos){
+        manager.beginTransaction()
+                .hide(fragments.get(0))
+                .hide(fragments.get(1))
+                .hide(fragments.get(2))
+                .hide(fragments.get(3))
+                .hide(fragments.get(4))
+                .show(fragments.get(pos))
+                .commit();
     }
 
     @Override

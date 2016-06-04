@@ -188,45 +188,44 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="活动专区"
+                android:text="@string/aty_text"
                 android:layout_margin="@dimen/margin_ten"/>
             <ImageView
                 android:id="@+id/discover_head_arrow"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
+                android:layout_width="@dimen/width_fifteen"
+                android:layout_height="@dimen/height_fifteen"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginTop="@dimen/margin_ten"
+                android:layout_marginRight="@dimen/margin_five"
                 android:src="@mipmap/arrow"/>
             <TextView
                 android:id="@+id/discover_more_activity_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="更多活动"
                 android:layout_toLeftOf="@id/discover_head_arrow"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/margin_ten"
                 android:textColor="@color/colorGray"/>
             <ImageView
                 android:id="@+id/discover_head_first_iv"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="@dimen/hundred"
+                android:layout_height="@dimen/hundred"
                 android:layout_below="@id/discover_head_arrow"
-                android:layout_margin="10dp"/>
+                android:layout_margin="@dimen/margin_ten"/>
 
             <ImageView
                 android:id="@+id/discover_head_second_iv"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="@dimen/hundred"
+                android:layout_height="@dimen/hundred"
                 android:layout_below="@id/discover_head_arrow"
                 android:layout_centerHorizontal="true"
-                android:layout_margin="10dp"/>
+                android:layout_margin="@dimen/margin_ten"/>
             <ImageView
                 android:id="@+id/discover_head_third_iv"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="@dimen/hundred"
+                android:layout_height="@dimen/hundred"
                 android:layout_below="@id/discover_head_arrow"
                 android:layout_alignParentRight="true"
-                android:layout_margin="10dp"/>
+                android:layout_margin="@dimen/margin_ten"/>
 
         </RelativeLayout>
 
@@ -235,40 +234,40 @@
     <include layout="@layout/view"/>
 
     <RelativeLayout
-        android:layout_width="384dp"
+        android:layout_width="@dimen/discover_head_relative_layout_height"
         android:layout_height="wrap_content">
 
 
         <ImageView
             android:id="@+id/discover_head_car_shop_iv"
-            android:layout_width="192dp"
-            android:layout_height="99dp"/>
+            android:layout_width="@dimen/discover_head_image_width"
+            android:layout_height="@dimen/discover_head_image_height"/>
         <ImageView
             android:id="@+id/discover_head_buy_iv"
-            android:layout_width="192dp"
-            android:layout_height="99dp"
+            android:layout_width="@dimen/discover_head_image_width"
+            android:layout_height="@dimen/discover_head_image_height"
             android:layout_alignParentRight="true"/>
 
         <ImageView
             android:id="@+id/discover_head_used_car_iv"
-            android:layout_width="192dp"
-            android:layout_height="99dp"
+            android:layout_width="@dimen/discover_head_image_width"
+            android:layout_height="@dimen/discover_head_image_height"
             android:layout_below="@id/discover_head_car_shop_iv"/>
         <ImageView
             android:id="@+id/discover_head_beauty_iv"
-            android:layout_width="192dp"
-            android:layout_height="99dp"
+            android:layout_width="@dimen/discover_head_image_width"
+            android:layout_height="@dimen/discover_head_image_height"
             android:layout_below="@id/discover_head_car_shop_iv"
             android:layout_alignParentRight="true"/>
         <ImageView
             android:id="@+id/discover_head_insurance_iv"
-            android:layout_width="192dp"
-            android:layout_height="99dp"
+            android:layout_width="@dimen/discover_head_image_width"
+            android:layout_height="@dimen/discover_head_image_height"
             android:layout_below="@id/discover_head_used_car_iv"/>
         <ImageView
             android:id="@+id/discover_head_oil_iv"
-            android:layout_width="192dp"
-            android:layout_height="99dp"
+            android:layout_width="@dimen/discover_head_image_width"
+            android:layout_height="@dimen/discover_head_image_height"
             android:layout_below="@id/discover_head_beauty_iv"
             android:layout_alignParentRight="true"/>
     </RelativeLayout>

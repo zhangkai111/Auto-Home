@@ -24,8 +24,8 @@
 
             <View
                 android:id="@+id/newest_v_dot1"
-                android:layout_width="8dp"
-                android:layout_height="8dp"
+                android:layout_width="@dimen/eight"
+                android:layout_height="@dimen/eight"
                 android:background="@mipmap/point_pressed" />
 
             <View

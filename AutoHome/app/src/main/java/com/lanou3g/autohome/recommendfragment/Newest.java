@@ -6,7 +6,6 @@ import android.os.Message;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.text.format.DateUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -23,12 +22,13 @@ import com.android.volley.toolbox.Volley;
 import com.handmark.pulltorefresh.library.ILoadingLayout;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
+import com.lanou3g.autohome.Collect;
 import com.lanou3g.autohome.R;
 import com.lanou3g.autohome.base.BaseFragment;
 import com.lanou3g.autohome.recommendadapter.NewestAdapter;
 import com.lanou3g.autohome.recommendbean.GsonRequest;
 import com.lanou3g.autohome.recommendbean.NewestBean;
-import com.lanou3g.autohome.recommenddetail.Detail;
+import com.lanou3g.autohome.Detail;
 import com.lanou3g.autohome.utils.ImagePaperAdapter;
 import com.lanou3g.autohome.utils.VolleySingle;
 
@@ -53,6 +53,7 @@ public class Newest extends BaseFragment implements AdapterView.OnItemClickListe
     private LayoutInflater inflater;
     private NewestBean newestBean;
     private ViewPager mviewPager;
+    private Collect collect;
     /**
      * 用于小圆点图片
      */
@@ -266,10 +267,13 @@ public class Newest extends BaseFragment implements AdapterView.OnItemClickListe
                 break;
         }
         intent.putExtra("url", url);
-        intent.putExtra("imageUrl",newestBean.getResult().getNewslist().get(position- 2).getSmallpic());
-        intent.putExtra("id",newestBean.getResult().getNewslist().get(position - 2).getId());
-        intent.putExtra("title",newestBean.getResult().getNewslist().get(position - 2).getTitle());
-        intent.putExtra("time",newestBean.getResult().getNewslist().get(position - 2).getTime());
+
+        int ids = newestBean.getResult().getNewslist().get(position - 2).getId();
+        String imageUrl = newestBean.getResult().getNewslist().get(position- 2).getSmallpic();
+        String title = newestBean.getResult().getNewslist().get(position - 2).getTitle();
+        String time = newestBean.getResult().getNewslist().get(position - 2).getTime();
+        Collect collect = new Collect((long)ids,url,imageUrl,title,time);
+        intent.putExtra("collect",collect);
         startActivity(intent);
     }
 

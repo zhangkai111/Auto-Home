@@ -1,10 +1,18 @@
 [
     {
-        "merged": "/Users/dllo/Desktop/githubspace/Auto-Home/AutoHome/library/build/intermediates/res/merged/androidTest/debug/drawable/indicator_bg_top.xml",
-        "source": "/Users/dllo/Desktop/githubspace/Auto-Home/AutoHome/library/build/intermediates/bundles/debug/res/drawable/indicator_bg_top.xml"
+        "merged": "C:\\Users\\dllo\\Desktop\\Apple\\5.30\\AutoHome\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_top.xml",
+        "source": "C:\\Users\\dllo\\Desktop\\Apple\\5.30\\AutoHome\\library\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_top.xml"
     },
     {
-        "merged": "/Users/dllo/Desktop/githubspace/Auto-Home/AutoHome/library/build/intermediates/res/merged/androidTest/debug/drawable/indicator_bg_bottom.xml",
-        "source": "/Users/dllo/Desktop/githubspace/Auto-Home/AutoHome/library/build/intermediates/bundles/debug/res/drawable/indicator_bg_bottom.xml"
+        "merged": "C:\\Users\\dllo\\Desktop\\Apple\\5.30\\AutoHome\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_bottom.xml",
+        "source": "C:\\Users\\dllo\\Desktop\\Apple\\5.30\\AutoHome\\library\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\samsung\\Desktop\\6.2\\6.2\\AutoHome\\AutoHome\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_top.xml",
+        "source": "C:\\Users\\samsung\\Desktop\\6.2\\6.2\\AutoHome\\AutoHome\\library\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_top.xml"
+    },
+    {
+        "merged": "C:\\Users\\samsung\\Desktop\\6.2\\6.2\\AutoHome\\AutoHome\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_bottom.xml",
+        "source": "C:\\Users\\samsung\\Desktop\\6.2\\6.2\\AutoHome\\AutoHome\\library\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_bottom.xml"
     }
 ]

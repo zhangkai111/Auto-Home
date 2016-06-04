@@ -47,6 +47,7 @@ public class FindCarFragment extends BaseFragment {
         findcarTab.setupWithViewPager(findcarVp);
     }
     private void initFragment(){
+
         fragments = new ArrayList<>();
         fragments.add(new Brand());
         fragments.add(new Filter());

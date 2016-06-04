@@ -8,9 +8,9 @@
         android:id="@+id/form_hot_item_title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="15dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="5dp"
+        android:textSize="@dimen/text_size_fifteen"
+        android:layout_marginLeft="@dimen/margin_ten"
+        android:layout_marginTop="@dimen/margin_five"
         android:text="title" />
 
     <RelativeLayout
@@ -21,7 +21,7 @@
             android:id="@+id/form_hot_item_content_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:padding="@dimen/margin_ten"
             android:text="content"
             android:textColor="@color/colorGray" />
         <TextView
@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="time"
-            android:padding="10dp"
+            android:padding="@dimen/margin_ten"
             android:textColor="@color/colorGray"
             android:layout_toRightOf="@id/form_hot_item_content_tv"/>
 
@@ -40,6 +40,6 @@
             android:layout_alignParentRight="true"
             android:text="replycontent"
             android:textColor="@color/colorGray"
-            android:padding="10dp"/>
+            android:padding="@dimen/margin_ten"/>
     </RelativeLayout>
 </LinearLayout>

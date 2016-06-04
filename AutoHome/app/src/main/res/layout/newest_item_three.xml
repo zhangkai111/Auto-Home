@@ -7,8 +7,8 @@
         android:id="@+id/newest_item_three_title_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:layout_marginLeft="10dp"/>
+        android:textSize="@dimen/text_size_fifteen"
+        android:layout_marginLeft="@dimen/margin_ten"/>
 
     <LinearLayout
         android:id="@+id/newest_item_three_layout"
@@ -48,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/newest_item_three_layout"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="@dimen/margin_ten"
         android:textColor="@color/colorGray"/>
 
     <TextView
@@ -58,6 +58,6 @@
         android:layout_alignParentRight="true"
         android:layout_below="@id/newest_item_three_layout"
         android:textColor="@color/colorGray"
-        android:layout_marginRight="10dp"/>
+        android:layout_marginRight="@dimen/margin_ten"/>
 
 </RelativeLayout>

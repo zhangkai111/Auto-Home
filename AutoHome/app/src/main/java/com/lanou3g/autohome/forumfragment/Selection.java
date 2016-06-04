@@ -3,12 +3,11 @@ package com.lanou3g.autohome.forumfragment;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.view.View;
 
 import com.lanou3g.autohome.R;
+import com.lanou3g.autohome.forumfragment.selection.All;
 import com.lanou3g.autohome.fragmentadapter.SelectionAdapter;
 import com.lanou3g.autohome.base.BaseFragment;
-import com.lanou3g.autohome.forumfragment.selection.All;
 import com.lanou3g.autohome.forumfragment.selection.Beautiful;
 import com.lanou3g.autohome.forumfragment.selection.Electrocar;
 import com.lanou3g.autohome.forumfragment.selection.HOF;

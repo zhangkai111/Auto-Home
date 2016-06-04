@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGray">
+
+    <RelativeLayout
+        android:id="@+id/popup_window_re"
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="价格"
+        android:layout_margin="@dimen/margin_ten"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="级别"
+        android:layout_centerVertical="true"
+        android:layout_margin="@dimen/margin_ten"/>
+    </RelativeLayout>
+
+</LinearLayout>

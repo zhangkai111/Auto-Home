@@ -15,8 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_margin="5dp"
-        android:text="热门品牌"/>
+        android:layout_margin="@dimen/margin_five"/>
 
     </RelativeLayout>
     <include layout="@layout/line"/>
@@ -87,7 +86,7 @@
 
         <RelativeLayout
             android:layout_width="@dimen/width_sixty"
-            android:layout_height="@dimen/fifty"
+            android:layout_height="@dimen/seventy"
             android:layout_margin="@dimen/margin_six"
             android:orientation="vertical">
 
@@ -131,7 +130,7 @@
 
         <RelativeLayout
             android:layout_width="@dimen/width_sixty"
-            android:layout_height="@dimen/fifty"
+            android:layout_height="@dimen/seventy"
             android:layout_margin="@dimen/margin_six"
             android:orientation="vertical">
 

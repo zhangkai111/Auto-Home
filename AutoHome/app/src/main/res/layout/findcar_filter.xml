@@ -8,12 +8,12 @@
     <RelativeLayout
         android:id="@+id/findcar_filter_condition_rl"
         android:layout_width="match_parent"
-        android:layout_height="40dp">
+        android:layout_height="@dimen/thirty_five">
     <TextView
         android:id="@+id/findcar_filter_condition_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="条件"
+        android:text="@string/condition"
         android:layout_centerInParent="true"/>
 
         <ImageView
@@ -26,12 +26,12 @@
     <include layout="@layout/line"/>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="20dp">
+        android:layout_height="@dimen/twenty">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="热门车系"
+            android:layout_marginLeft="@dimen/margin_ten"
+            android:text="@string/hot_car"
             android:layout_centerVertical="true"/>
     </RelativeLayout>
     <include layout="@layout/line"/>

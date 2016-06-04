@@ -10,29 +10,29 @@
 
         <ImageView
             android:id="@+id/forum_common_car_iv"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="10dp"
+            android:layout_width="@dimen/sixty"
+            android:layout_height="@dimen/sixty"
+            android:layout_margin="@dimen/margin_ten"
             android:src="@mipmap/caricon"/>
 
         <TextView
             android:id="@+id/forum_common_car_forum_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="车系论坛"
+            android:text="@string/forum_common_car"
             android:layout_toRightOf="@id/forum_common_car_iv"
-            android:textSize="20dp"
-            android:layout_marginTop="10dp"/>
+            android:textSize="@dimen/text_size_twenty"
+            android:layout_marginTop="@dimen/margin_ten"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="为你的爱车找到队伍"
+            android:text="@string/forum_common_car_content"
             android:layout_toRightOf="@id/forum_common_car_iv"
             android:layout_below="@id/forum_common_car_forum_tv"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="@dimen/margin_ten"
             android:textColor="@color/colorGray"
-            android:layout_marginTop="15dp"/>
+            android:layout_marginTop="@dimen/margin_fifteen"/>
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -40,29 +40,29 @@
 
         <ImageView
             android:id="@+id/forum_common_area_iv"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="10dp"
+            android:layout_width="@dimen/sixty"
+            android:layout_height="@dimen/sixty"
+            android:layout_margin="@dimen/margin_ten"
             android:src="@mipmap/area"/>
 
         <TextView
             android:id="@+id/forum_common_area_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="车系论坛"
+            android:text="@string/forum_forum"
             android:layout_toRightOf="@id/forum_common_area_iv"
-            android:textSize="20dp"
-            android:layout_marginTop="10dp"/>
+            android:textSize="@dimen/text_size_twenty"
+            android:layout_marginTop="@dimen/margin_ten"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="老乡见老乡,两眼泪汪汪"
+            android:text="@string/forum_forum_content"
             android:layout_toRightOf="@id/forum_common_area_iv"
             android:layout_below="@id/forum_common_area_tv"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="@dimen/margin_ten"
             android:textColor="@color/colorGray"
-            android:layout_marginTop="15dp"/>
+            android:layout_marginTop="@dimen/margin_fifteen"/>
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -70,29 +70,29 @@
 
         <ImageView
             android:id="@+id/forum_common_them_iv"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="10dp"
+            android:layout_width="@dimen/sixty"
+            android:layout_height="@dimen/sixty"
+            android:layout_margin="@dimen/margin_ten"
             android:src="@mipmap/flag"/>
 
         <TextView
             android:id="@+id/forum_common_them_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="车系论坛"
+            android:text="@string/forum_them"
             android:layout_toRightOf="@id/forum_common_them_iv"
-            android:textSize="20dp"
-            android:layout_marginTop="10dp"/>
+            android:textSize="@dimen/text_size_twenty"
+            android:layout_marginTop="@dimen/margin_ten"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="兴趣爱好的聚集地"
+            android:text="@string/forum_them_content"
             android:layout_toRightOf="@id/forum_common_them_iv"
             android:layout_below="@id/forum_common_them_tv"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="@dimen/margin_ten"
             android:textColor="@color/colorGray"
-            android:layout_marginTop="15dp"/>
+            android:layout_marginTop="@dimen/margin_fifteen"/>
     </RelativeLayout>
 
 </LinearLayout>

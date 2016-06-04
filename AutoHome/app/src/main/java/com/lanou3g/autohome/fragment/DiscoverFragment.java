@@ -7,7 +7,6 @@ import android.os.Message;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.text.format.DateUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -24,11 +23,13 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.lanou3g.autohome.R;
 import com.lanou3g.autohome.base.BaseFragment;
+import com.lanou3g.autohome.forumfragment.selection.All;
+import com.lanou3g.autohome.forumselectiondetail.AllDetail;
 import com.lanou3g.autohome.fragmentadapter.DiscoverAdapter;
 import com.lanou3g.autohome.fragmentbean.DiscoverBean;
 import com.lanou3g.autohome.fragmentbean.DiscoverHeadBean;
 import com.lanou3g.autohome.fragmentbean.DiscoverImageBean;
-import com.lanou3g.autohome.recommenddetail.Detail;
+import com.lanou3g.autohome.fragmentbean.DiscoverImageDetailBean;
 import com.lanou3g.autohome.utils.ImagePaperAdapter;
 import com.lanou3g.autohome.utils.VolleySingle;
 
@@ -53,6 +54,7 @@ public class DiscoverFragment extends BaseFragment implements AdapterView.OnItem
     private DiscoverAdapter discoverAdapter;
     private DiscoverBean discoverBean;
     private DiscoverImageBean discoverImageBean;
+    private DiscoverImageDetailBean discoverImageDetailBean;
     private LayoutInflater inflater;
     private ViewPager mviewPager;
     private DiscoverHeadBean discoverHeadBean;
@@ -82,8 +84,9 @@ public class DiscoverFragment extends BaseFragment implements AdapterView.OnItem
 
     boolean isAutoPlay = true;//是否自动轮播
 
-    private ScheduledExecutorService scheduledExecutorService;
+    private ScheduledExecutorService scheduledExecutorService;//定时周期执行指定的任务
 
+    //接收handler传过来的值，就是轮播图的页数
     private Handler handler = new Handler() {
 
         @Override
@@ -111,6 +114,7 @@ public class DiscoverFragment extends BaseFragment implements AdapterView.OnItem
         imageHead = getLayoutInflater(null).inflate(R.layout.discover_image_head, null);
         listView.addHeaderView(imageHead);
 
+
         viewHead = getLayoutInflater(null).inflate(R.layout.discover_head, null);
         initViewHeadData();
         listView.addHeaderView(viewHead);
@@ -119,8 +123,8 @@ public class DiscoverFragment extends BaseFragment implements AdapterView.OnItem
         initCarViewHeadData();
         listView.addHeaderView(viewCarHead);
 
-        viewFourCarHead = getLayoutInflater(null).inflate(R.layout.discover_head_four_car, null);
-        initFourCarViewHeadData();
+        viewFourCarHead = getLayoutInflater(null).inflate(R.layout.discover_head_two_car, null);
+        initTwoCarViewHeadData();
         listView.addHeaderView(viewFourCarHead);
 
         listView.setOnItemClickListener(this);
@@ -136,33 +140,33 @@ public class DiscoverFragment extends BaseFragment implements AdapterView.OnItem
         }
     }
 
-    private void initFourCarViewHeadData() {
+    private void initTwoCarViewHeadData() {
         //品牌精选
 
-        titleBrandTv = (TextView) viewFourCarHead.findViewById(R.id.discover_head_four_car);
-        firstBrandIv = (ImageView) viewFourCarHead.findViewById(R.id.discover_head_car_first_iv);
-        firstBrandTitleTv = (TextView) viewFourCarHead.findViewById(R.id.discover_head_car_first_title_tv);
-        firstBrandShortTitleTv = (TextView) viewFourCarHead.findViewById(R.id.discover_head_car_first_short_title_tv);
-        firstBrandPriceTv = (TextView) viewFourCarHead.findViewById(R.id.discover_head_car_first_price_tv);
-        firstBrandFctPrice = (TextView) viewFourCarHead.findViewById(R.id.discover_head_car_first_fctprice_tv);
+        titleBrandTv = (TextView) viewFourCarHead.findViewById(R.id.discover_head_two_car_brand_title);
+        firstBrandIv = (ImageView) viewFourCarHead.findViewById(R.id.discover_head_two_car_hot_iv);
+        firstBrandTitleTv = (TextView) viewFourCarHead.findViewById(R.id.discover_head_two_car_hot_title_tv);
+        firstBrandShortTitleTv = (TextView) viewFourCarHead.findViewById(R.id.discover_head_two_car_hot_short_title_tv);
+        firstBrandPriceTv = (TextView) viewFourCarHead.findViewById(R.id.discover_head_two_car_hot_price_tv);
+        firstBrandFctPrice = (TextView) viewFourCarHead.findViewById(R.id.discover_head_two_car_hot_fctprice_tv);
 
-        secondBrandIv = (ImageView) viewFourCarHead.findViewById(R.id.discover_head_car_second_iv);
-        secondBrandTitleTv = (TextView) viewFourCarHead.findViewById(R.id.discover_head_car_second_title_tv);
-        secondBrandShortTitleTv = (TextView) viewFourCarHead.findViewById(R.id.discover_head_car_second_short_title_tv);
-        secondBrandPriceTv = (TextView) viewFourCarHead.findViewById(R.id.discover_head_car_second_price_tv);
-        secondBrandFctPrice = (TextView) viewFourCarHead.findViewById(R.id.discover_head_car_second_fctprice_tv);
+        secondBrandIv = (ImageView) viewFourCarHead.findViewById(R.id.discover_head_two_car_hot_right_iv);
+        secondBrandTitleTv = (TextView) viewFourCarHead.findViewById(R.id.discover_head_two_car_hot_right_title_tv);
+        secondBrandShortTitleTv = (TextView) viewFourCarHead.findViewById(R.id.discover_head_two_car_hot_right_short_title_tv);
+        secondBrandPriceTv = (TextView) viewFourCarHead.findViewById(R.id.discover_head_two_car_hot_right_price_tv);
+        secondBrandFctPrice = (TextView) viewFourCarHead.findViewById(R.id.discover_head_two_car_hot_right_fctprice_tv);
 
-        thirdBrandIv = (ImageView) viewFourCarHead.findViewById(R.id.discover_head_car_third_iv);
-        thirdBrandTitleTv = (TextView) viewFourCarHead.findViewById(R.id.discover_head_car_third_title_tv);
-        thirdBrandShortTitleTv = (TextView) viewFourCarHead.findViewById(R.id.discover_head_car_third_short_title_tv);
-        thirdBrandPriceTv = (TextView) viewFourCarHead.findViewById(R.id.discover_head_car_third_price_tv);
-        thirdBrandFctPrice = (TextView) viewFourCarHead.findViewById(R.id.discover_head_car_third_fctprice_tv);
-
-        forthBrandIv = (ImageView) viewFourCarHead.findViewById(R.id.discover_head_car_forth_iv);
-        forthBrandTitleTv = (TextView) viewFourCarHead.findViewById(R.id.discover_head_car_forth_title_tv);
-        forthBrandShortTitleTv = (TextView) viewFourCarHead.findViewById(R.id.discover_head_car_forth_short_title_tv);
-        forthBrandPriceTv = (TextView) viewFourCarHead.findViewById(R.id.discover_head_car_forth_price_tv);
-        forthBrandFctPrice = (TextView) viewFourCarHead.findViewById(R.id.discover_head_car_forth_fctprice_tv);
+//        thirdBrandIv = (ImageView) viewFourCarHead.findViewById(R.id.discover_head_car_third_iv);
+//        thirdBrandTitleTv = (TextView) viewFourCarHead.findViewById(R.id.discover_head_car_third_title_tv);
+//        thirdBrandShortTitleTv = (TextView) viewFourCarHead.findViewById(R.id.discover_head_car_third_short_title_tv);
+//        thirdBrandPriceTv = (TextView) viewFourCarHead.findViewById(R.id.discover_head_car_third_price_tv);
+//        thirdBrandFctPrice = (TextView) viewFourCarHead.findViewById(R.id.discover_head_car_third_fctprice_tv);
+//
+//        forthBrandIv = (ImageView) viewFourCarHead.findViewById(R.id.discover_head_car_forth_iv);
+//        forthBrandTitleTv = (TextView) viewFourCarHead.findViewById(R.id.discover_head_car_forth_title_tv);
+//        forthBrandShortTitleTv = (TextView) viewFourCarHead.findViewById(R.id.discover_head_car_forth_short_title_tv);
+//        forthBrandPriceTv = (TextView) viewFourCarHead.findViewById(R.id.discover_head_car_forth_price_tv);
+//        forthBrandFctPrice = (TextView) viewFourCarHead.findViewById(R.id.discover_head_car_forth_fctprice_tv);
     }
 
     private void initCarViewHeadData() {
@@ -291,11 +295,11 @@ public class DiscoverFragment extends BaseFragment implements AdapterView.OnItem
             @Override
             public void onPullUpToRefresh(PullToRefreshBase<ListView> refreshView) {
 
+                //上拉加载，没有接口
             }
         });
 
         //轮播图
-
         VolleySingle.addRequest("http://app.api.autohome.com.cn/autov5.0.0/mobile/appadvert-a2-pm1-v5.0.1-sid2-pid340000-cid0-lat0.000000-lng0.000000.json",
                 DiscoverImageBean.class, new Response.Listener<DiscoverImageBean>() {
                     @Override
@@ -309,6 +313,21 @@ public class DiscoverFragment extends BaseFragment implements AdapterView.OnItem
 
                     }
                 });
+        //轮播图详情
+        VolleySingle.addRequest("http://app.api.autohome.com.cn/autov5.0.0/mall/goods-pm1-c0-a2.json",
+                DiscoverImageDetailBean.class,
+                new Response.Listener<DiscoverImageDetailBean>() {
+                    @Override
+                    public void onResponse(DiscoverImageDetailBean response) {
+                        discoverImageDetailBean = response;
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                });
+
 
         //item和汽车的头布局
 
@@ -364,19 +383,19 @@ public class DiscoverFragment extends BaseFragment implements AdapterView.OnItem
                         secondBrandFctPrice.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
                         secondBrandFctPrice.setText(discoverBean.getResult().getModulelist().get(1).getList().get(1).getFctprice());
 
-                        Picasso.with(context).load(discoverBean.getResult().getModulelist().get(1).getList().get(2).getLogo()).into(thirdBrandIv);
-                        thirdBrandTitleTv.setText(discoverBean.getResult().getModulelist().get(1).getList().get(2).getTitle());
-                        thirdBrandShortTitleTv.setText(discoverBean.getResult().getModulelist().get(1).getList().get(2).getAdinfo());
-                        thirdBrandPriceTv.setText(discoverBean.getResult().getModulelist().get(1).getList().get(2).getPrice());
-                        thirdBrandFctPrice.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
-                        thirdBrandFctPrice.setText(discoverBean.getResult().getModulelist().get(1).getList().get(2).getFctprice());
-
-                        Picasso.with(context).load(discoverBean.getResult().getModulelist().get(1).getList().get(3).getLogo()).into(forthBrandIv);
-                        forthBrandTitleTv.setText(discoverBean.getResult().getModulelist().get(1).getList().get(3).getTitle());
-                        forthBrandShortTitleTv.setText(discoverBean.getResult().getModulelist().get(1).getList().get(3).getAdinfo());
-                        forthBrandPriceTv.setText(discoverBean.getResult().getModulelist().get(1).getList().get(3).getPrice());
-                        forthBrandFctPrice.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
-                        forthBrandFctPrice.setText(discoverBean.getResult().getModulelist().get(1).getList().get(3).getFctprice());
+//                        Picasso.with(context).load(discoverBean.getResult().getModulelist().get(1).getList().get(2).getLogo()).into(thirdBrandIv);
+//                        thirdBrandTitleTv.setText(discoverBean.getResult().getModulelist().get(1).getList().get(2).getTitle());
+//                        thirdBrandShortTitleTv.setText(discoverBean.getResult().getModulelist().get(1).getList().get(2).getAdinfo());
+//                        thirdBrandPriceTv.setText(discoverBean.getResult().getModulelist().get(1).getList().get(2).getPrice());
+//                        thirdBrandFctPrice.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
+//                        thirdBrandFctPrice.setText(discoverBean.getResult().getModulelist().get(1).getList().get(2).getFctprice());
+//
+//                        Picasso.with(context).load(discoverBean.getResult().getModulelist().get(1).getList().get(3).getLogo()).into(forthBrandIv);
+//                        forthBrandTitleTv.setText(discoverBean.getResult().getModulelist().get(1).getList().get(3).getTitle());
+//                        forthBrandShortTitleTv.setText(discoverBean.getResult().getModulelist().get(1).getList().get(3).getAdinfo());
+//                        forthBrandPriceTv.setText(discoverBean.getResult().getModulelist().get(1).getList().get(3).getPrice());
+//                        forthBrandFctPrice.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
+//                        forthBrandFctPrice.setText(discoverBean.getResult().getModulelist().get(1).getList().get(3).getFctprice());
 
 
                     }
@@ -437,7 +456,7 @@ public class DiscoverFragment extends BaseFragment implements AdapterView.OnItem
         dotViewList = new ArrayList<>();
         list = new ArrayList<>();
 
-
+        //设置小圆点
         for (int i = 0; i < discoverImageBean.getResult().getList().size(); i++) {
             ImageView dotView = new ImageView(context);
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(new ActionBar.LayoutParams(
@@ -459,6 +478,7 @@ public class DiscoverFragment extends BaseFragment implements AdapterView.OnItem
             //上面是动态添加小圆点
         }
 
+        //设置轮播图的图片
         for (int i = 0; i < discoverImageBean.getResult().getList().size(); i++) {
             ImageView imageView = (ImageView) inflater.inflate(R.layout.scroll_view_item, null);
             String url = discoverImageBean.getResult().getList().get(i).getImgurl();
@@ -481,20 +501,22 @@ public class DiscoverFragment extends BaseFragment implements AdapterView.OnItem
 
     }
 
+    //listView的点击事件
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         if (position > 3) {
-            Intent intent = new Intent(context, Detail.class);
+            Intent intent = new Intent(context, AllDetail.class);
             intent.setAction(Intent.ACTION_VIEW);
-            String url = discoverBean.getResult().getGoodslist().getList().get(position - 4).getMurl();
+            String url = discoverBean.getResult().getGoodslist().getList().get(position - 5).getMurl();
             intent.putExtra("url", url);
             startActivity(intent);
         }
     }
 
+    //轮播图下的ScrollView的点击事件，六张图片的点击事件
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(context, Detail.class);
+        Intent intent = new Intent(context, AllDetail.class);
         String url = "";
         switch (v.getId()) {
             case R.id.discover_head_scroll_car_iv:
@@ -608,7 +630,7 @@ public class DiscoverFragment extends BaseFragment implements AdapterView.OnItem
         }
 
         @Override
-        public void onPageSelected(int pos) {
+        public void onPageSelected(final int pos) {
             // TODO Auto-generated method stub
             //这里面动态改变小圆点的被背景，来实现效果
             currentItem = pos;
@@ -619,6 +641,16 @@ public class DiscoverFragment extends BaseFragment implements AdapterView.OnItem
                     (dotViewList.get(i)).setBackgroundResource(R.mipmap.point_unpressed);
                 }
             }
+            //给轮播图添加点击事件
+            list.get(pos).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String url = discoverImageDetailBean.getResult().getApricebuycar().getList().get(pos).getMurl();
+                    Intent intent = new Intent(context, AllDetail.class);
+                    intent.putExtra("url",url);
+                    startActivity(intent);
+                }
+            });
         }
 
     }

@@ -1,14 +1,26 @@
 [
     {
-        "merged": "/Users/dllo/Desktop/githubspace/Auto-Home/AutoHome/library/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/default_ptr_flip.png",
-        "source": "/Users/dllo/Desktop/githubspace/Auto-Home/AutoHome/library/build/intermediates/bundles/debug/res/drawable-hdpi-v4/default_ptr_flip.png"
+        "merged": "C:\\Users\\dllo\\Desktop\\Apple\\5.30\\AutoHome\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\indicator_arrow.png",
+        "source": "C:\\Users\\dllo\\Desktop\\Apple\\5.30\\AutoHome\\library\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\indicator_arrow.png"
     },
     {
-        "merged": "/Users/dllo/Desktop/githubspace/Auto-Home/AutoHome/library/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/default_ptr_rotate.png",
-        "source": "/Users/dllo/Desktop/githubspace/Auto-Home/AutoHome/library/build/intermediates/bundles/debug/res/drawable-hdpi-v4/default_ptr_rotate.png"
+        "merged": "C:\\Users\\dllo\\Desktop\\Apple\\5.30\\AutoHome\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\default_ptr_flip.png",
+        "source": "C:\\Users\\dllo\\Desktop\\Apple\\5.30\\AutoHome\\library\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\default_ptr_flip.png"
     },
     {
-        "merged": "/Users/dllo/Desktop/githubspace/Auto-Home/AutoHome/library/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/indicator_arrow.png",
-        "source": "/Users/dllo/Desktop/githubspace/Auto-Home/AutoHome/library/build/intermediates/bundles/debug/res/drawable-hdpi-v4/indicator_arrow.png"
+        "merged": "C:\\Users\\samsung\\Desktop\\6.2\\6.2\\AutoHome\\AutoHome\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\indicator_arrow.png",
+        "source": "C:\\Users\\samsung\\Desktop\\6.2\\6.2\\AutoHome\\AutoHome\\library\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\indicator_arrow.png"
+    },
+    {
+        "merged": "C:\\Users\\dllo\\Desktop\\Apple\\5.30\\AutoHome\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\default_ptr_rotate.png",
+        "source": "C:\\Users\\dllo\\Desktop\\Apple\\5.30\\AutoHome\\library\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\default_ptr_rotate.png"
+    },
+    {
+        "merged": "C:\\Users\\samsung\\Desktop\\6.2\\6.2\\AutoHome\\AutoHome\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\default_ptr_flip.png",
+        "source": "C:\\Users\\samsung\\Desktop\\6.2\\6.2\\AutoHome\\AutoHome\\library\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\default_ptr_flip.png"
+    },
+    {
+        "merged": "C:\\Users\\samsung\\Desktop\\6.2\\6.2\\AutoHome\\AutoHome\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\default_ptr_rotate.png",
+        "source": "C:\\Users\\samsung\\Desktop\\6.2\\6.2\\AutoHome\\AutoHome\\library\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\default_ptr_rotate.png"
     }
 ]

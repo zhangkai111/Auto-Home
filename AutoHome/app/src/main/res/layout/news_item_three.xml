@@ -8,7 +8,7 @@
         android:id="@+id/news_item_three_title_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="15sp"/>
+        android:textSize="@dimen/text_size_fifteen"/>
 
     <LinearLayout
         android:id="@+id/news_item_three_layout"
@@ -22,21 +22,21 @@
             android:id="@+id/news_item_three_first_iv"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/seventy_five"
             android:padding="@dimen/item_three_image_padding"/>
 
         <ImageView
             android:id="@+id/news_item_three_two_iv"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/seventy_five"
             android:padding="@dimen/item_three_image_padding"/>
 
         <ImageView
             android:id="@+id/news_item_three_three_iv"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/seventy_five"
             android:padding="@dimen/item_three_image_padding"/>
     </LinearLayout>
 

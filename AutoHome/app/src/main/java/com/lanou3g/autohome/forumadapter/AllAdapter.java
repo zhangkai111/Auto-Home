@@ -2,7 +2,6 @@ package com.lanou3g.autohome.forumadapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,8 +21,10 @@ public class AllAdapter extends RecyclerView.Adapter {
 
     private AllBean allBean;
     private Context context;
+    //RecyclerView没有点击事件，如果要用点击事件需要自定义接口
     private RecyclerViewOnClickListener recyclerViewOnClickListener;
 
+    //提供set方法
     public void setRecyclerViewOnClickListener(RecyclerViewOnClickListener recyclerViewOnClickListener) {
         this.recyclerViewOnClickListener = recyclerViewOnClickListener;
     }
@@ -54,6 +55,7 @@ public class AllAdapter extends RecyclerView.Adapter {
         allViewHolder.allReplycountTv.setText(allBean.getResult().getList().get(position).getReplycounts() + "回");
         Picasso.with(context).load(allBean.getResult().getList().get(position).getSmallpic()).error(R.mipmap.ic_launcher).into(allViewHolder.imageView);
 
+        //传递点击Item的位置
         if (recyclerViewOnClickListener != null){
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

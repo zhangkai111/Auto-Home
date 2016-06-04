@@ -73,12 +73,16 @@ public class Brand extends BaseFragment {
 //        mainBrandHead = LayoutInflater.from(context).inflate(R.layout.brand_head_main_car,null);
 //        initMainBrandHeadData();
 //        expandableListView.addHeaderView(mainBrandHead);
+
+        //索引条的监听事件
         sideBar.setOnTouchingLetterChangedListener(new SideBar.OnTouchingLetterChangedListener() {
             @Override
             public void onTouchingLetterChanged(String s) {
                 sideBar.setTextView(textView);
+                //获取字符串0位置的字符
                 int pos = brandAdapter.getPosition(s.charAt(0));
                 if (pos != -1) {
+                    //设置选定指定的组
                     expandableListView.setSelectedGroup(pos);
                 }
             }
@@ -146,7 +150,7 @@ public class Brand extends BaseFragment {
                                 expandableListView.expandGroup(i);
                             }
                         }
-                        //取消父item的点击收缩
+                        //取消父item的点击收缩，让组一直是打开的状态
                         expandableListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
                             @Override
                             public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {

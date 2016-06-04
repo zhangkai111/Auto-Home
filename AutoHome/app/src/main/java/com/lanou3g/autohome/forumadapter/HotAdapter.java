@@ -57,6 +57,7 @@ public class HotAdapter extends BaseAdapter {
         viewHolder.itemContent.setText(hotBean.getResult().getList().get(position).getBbsname());
         viewHolder.itemReplyCount.setText(hotBean.getResult().getList().get(position).getReplycounts() + "回帖");
         String url = hotBean.getResult().getList().get(position).getPostdate();
+        //截取一段字符
         String time = url.substring(5,16);
         viewHolder.itemTime.setText(time);
         return convertView;

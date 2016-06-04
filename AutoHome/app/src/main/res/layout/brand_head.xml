@@ -58,7 +58,7 @@
             android:id="@+id/brand_head_hot_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="热销排行"
+            android:text="@string/brand_head_title_hot"
             android:layout_below="@id/brand_head_hot_iv"
             android:layout_centerHorizontal="true"/>
     </RelativeLayout>

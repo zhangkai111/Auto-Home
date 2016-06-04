@@ -15,6 +15,7 @@ import com.lanou3g.autohome.findcarbean.BrandItemBean;
 import it.sephiroth.android.library.picasso.Picasso;
 
 /**
+ * 继承BaseExpandableListAdapter
  * Created by dllo on 16/5/19.
  */
 public class BrandAdapter extends BaseExpandableListAdapter {
@@ -31,11 +32,13 @@ public class BrandAdapter extends BaseExpandableListAdapter {
         notifyDataSetChanged();
     }
 
+    //获取有几个组
     @Override
     public int getGroupCount() {
         return brandItemBean == null ? 0 : brandItemBean.getResult().getBrandlist().size();
     }
 
+    //获取每个组中的子布局的条数
     @Override
     public int getChildrenCount(int groupPosition) {
         return brandItemBean == null ? 0 : brandItemBean.getResult().getBrandlist().get(groupPosition).getList().size();
@@ -66,6 +69,7 @@ public class BrandAdapter extends BaseExpandableListAdapter {
         return true;
     }
 
+    //绑定组布局的布局文件
     @Override
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
         ViewHolderTitle viewHolderTitle = null;
@@ -81,6 +85,7 @@ public class BrandAdapter extends BaseExpandableListAdapter {
 
     }
 
+    //绑定子布局的布局文件
     @Override
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
         ViewHolder viewHolder = null;
@@ -104,6 +109,7 @@ public class BrandAdapter extends BaseExpandableListAdapter {
         return true;
     }
 
+    //自布局的ViewHolder
     class ViewHolder{
         ImageView brandIv;
         TextView brandTv;
@@ -112,6 +118,7 @@ public class BrandAdapter extends BaseExpandableListAdapter {
             brandTv = (TextView) itemView.findViewById(R.id.brand_item_brand_tv);
         }
     }
+    //组布局的ViewHolder
     class ViewHolderTitle{
 
         TextView titleTv;
@@ -119,6 +126,7 @@ public class BrandAdapter extends BaseExpandableListAdapter {
             titleTv = (TextView) title.findViewById(R.id.brand_item_title);
         }
     }
+    //遍历所有的数据
     public int getPosition(int sectionIndex){
         for (int i = 0;i<getGroupCount();i++){
             String sortStr = brandItemBean.getResult().getBrandlist().get(i).getLetter();

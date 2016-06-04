@@ -5,6 +5,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.lanou3g.autohome.R;
+
 /**
  * Created by dllo on 16/5/9.
  */
@@ -37,6 +39,13 @@ public abstract class BaseActivity extends AppCompatActivity {
      *  这样使用这个方法的时候是不需要强转的
      */
     protected <T extends View> T bindView(int id){
+
         return (T) findViewById(id);
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.anim_in,R.anim.anim_out);
     }
 }

@@ -7,7 +7,7 @@
         android:id="@+id/usecar_item_three_title_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="15sp"/>
+        android:textSize="@dimen/text_size_fifteen"/>
 
     <LinearLayout
         android:id="@+id/usecar_item_three_layout"

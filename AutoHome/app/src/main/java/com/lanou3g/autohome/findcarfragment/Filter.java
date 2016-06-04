@@ -1,7 +1,13 @@
 package com.lanou3g.autohome.findcarfragment;
 
+import android.graphics.Color;
 import android.text.format.DateUtils;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.PopupWindow;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -23,12 +29,14 @@ import com.lanou3g.autohome.utils.VolleySingle;
  * Created by dllo on 16/5/10.
  * 筛选
  */
-public class Filter extends BaseFragment {
+public class Filter extends BaseFragment implements View.OnClickListener {
     private PullToRefreshListView listView;
     private FilterBean filterBean;
     private FilterAdapter filterAdapter;
     private ILoadingLayout startLoading;
-
+    private RelativeLayout relativeLayout;
+    private PopupWindow popupWindow;
+    int i = 0;
 
     @Override
     public int initLayout() {
@@ -40,6 +48,9 @@ public class Filter extends BaseFragment {
 
         listView = bindView(R.id.findcar_filter_lv);
         listView.setMode(PullToRefreshBase.Mode.BOTH);
+
+        relativeLayout = bindView(R.id.findcar_filter_condition_rl);
+        relativeLayout.setOnClickListener(this);
 
         filterAdapter = new FilterAdapter(context);
         filterAdapter.setFilterBean(filterBean);
@@ -56,7 +67,7 @@ public class Filter extends BaseFragment {
         ILoadingLayout loadingLayout = listView.getLoadingLayoutProxy(false,true);
         loadingLayout.setRefreshingLabel("正在加载");
         loadingLayout.setPullLabel("上拉加载");
-
+        showPopup();
         listView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
             @Override
             public void onPullDownToRefresh(PullToRefreshBase<ListView> refreshView) {
@@ -84,6 +95,7 @@ public class Filter extends BaseFragment {
             public void onPullUpToRefresh(PullToRefreshBase<ListView> refreshView) {
                 //上拉加载
 
+                //没有接口
             }
         });
 
@@ -105,4 +117,25 @@ public class Filter extends BaseFragment {
 
 
     }
+
+    @Override
+    public void onClick(View v) {
+        //判断点击的次数，点击偶数次让他隐藏，奇数次让他显示
+        i ++;
+        if (i % 2 != 0) {
+            relativeLayout.setVisibility(View.VISIBLE);
+            popupWindow.showAsDropDown(relativeLayout);
+        }else {
+            popupWindow.dismiss();
+        }
+    }
+    //popupWindow方法
+    private void showPopup(){
+        popupWindow = new PopupWindow(ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT);
+        View view = LayoutInflater.from(context).inflate(R.layout.popup_window,null);
+        popupWindow.setContentView(view);
+
+    }
+
 }

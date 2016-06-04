@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,11 +18,10 @@ import it.sephiroth.android.library.picasso.Picasso;
 /**
  * Created by dllo on 16/5/12.
  */
-public class VideoAdapter extends RecyclerView.Adapter {
+public class VideoAdapter extends BaseAdapter {
 
     private VideoBean videoBean;
     private Context context;
-    private RecyclerViewOnClickListener recyclerViewOnClickListener;
 
     public VideoAdapter(Context context) {
         this.context = context;
@@ -32,53 +32,47 @@ public class VideoAdapter extends RecyclerView.Adapter {
         notifyDataSetChanged();
     }
 
-    public void setRecyclerViewOnClickListener(RecyclerViewOnClickListener recyclerViewOnClickListener) {
-        this.recyclerViewOnClickListener = recyclerViewOnClickListener;
+    private void setImage(ImageView iconIv , String url){
+        Picasso.with(context).load(url).into(iconIv);
     }
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        RecyclerView.ViewHolder viewHolder = null;
-        View view = LayoutInflater.from(context).inflate(R.layout.video_item,parent,false);
-        viewHolder = new VideoViewHolder(view);
-        return viewHolder;
+    public int getCount() {
+        return videoBean == null ? 0 : videoBean.getResult().getList().size();
     }
 
     @Override
-    public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
-        VideoViewHolder videoViewHolder = (VideoViewHolder) holder;
+    public Object getItem(int position) {
+        return null;
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return 0;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        VideoViewHolder videoViewHolder = null;
+        if (convertView == null){
+            convertView = LayoutInflater.from(context).inflate(R.layout.video_item,null);
+            videoViewHolder = new VideoViewHolder(convertView);
+            convertView.setTag(videoViewHolder);
+        }else {
+            videoViewHolder  = (VideoViewHolder) convertView.getTag();
+        }
         videoViewHolder.videoTitle.setText(videoBean.getResult().getList().get(position).getTitle());
         videoViewHolder.videoTime.setText(videoBean.getResult().getList().get(position).getTime());
         videoViewHolder.videoPlaycount.setText(videoBean.getResult().getList().get(position).getPlaycount() + "播放");
         String imgUrl = videoBean.getResult().getList().get(position).getSmallimg();
         setImage(videoViewHolder.imageView,imgUrl);
-
-        if (recyclerViewOnClickListener != null){
-            videoViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int pos = holder.getLayoutPosition();
-                    int ids = videoBean.getResult().getList().get(pos).getId();
-                    recyclerViewOnClickListener.onClick(ids);
-                }
-            });
-        }
+        return convertView;
     }
 
-    @Override
-    public int getItemCount() {
-        return videoBean == null ? 0 : videoBean.getResult().getList().size();
-    }
-
-    private void setImage(ImageView iconIv , String url){
-        Picasso.with(context).load(url).into(iconIv);
-    }
-
-    class VideoViewHolder extends RecyclerView.ViewHolder{
+    class VideoViewHolder{
         ImageView imageView;
         TextView videoTitle,videoTime,videoPlaycount;
         public VideoViewHolder(View itemView) {
-            super(itemView);
             imageView = (ImageView) itemView.findViewById(R.id.video_item_iv);
             videoTitle = (TextView) itemView.findViewById(R.id.video_item_title_tv);
             videoTime = (TextView) itemView.findViewById(R.id.video_item_time_tv);

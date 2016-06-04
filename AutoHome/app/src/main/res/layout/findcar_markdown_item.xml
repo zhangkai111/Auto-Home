@@ -10,17 +10,16 @@
 
         <ImageView
             android:id="@+id/findcar_markdown_item_iv"
-            android:layout_width="80dp"
-            android:layout_height="70dp"
-            android:layout_margin="10dp"
-            android:src="@mipmap/ic_launcher"/>
+            android:layout_width="@dimen/eighty"
+            android:layout_height="@dimen/seventy"
+            android:layout_margin="@dimen/margin_ten"/>
 
         <TextView
             android:id="@+id/findcar_markdown_item_title_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="title"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="@dimen/margin_twelve"
             android:layout_toRightOf="@id/findcar_markdown_item_iv"/>
         <TextView
             android:id="@+id/findcar_markdown_item_title_specname_tv"
@@ -28,13 +27,13 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/findcar_markdown_item_title_tv"
             android:text="title"
-            android:layout_margin="12dp"/>
+            android:layout_margin="@dimen/margin_twelve"/>
         <TextView
             android:id="@+id/findcar_markdown_item_now_price_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="nowprice"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="@dimen/margin_twenty_five"
             android:layout_toRightOf="@id/findcar_markdown_item_iv"
             android:layout_below="@id/findcar_markdown_item_title_tv"/>
         <TextView
@@ -42,8 +41,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="primeprice"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginLeft="@dimen/margin_ten"
+            android:layout_marginTop="@dimen/margin_twenty_five"
             android:layout_below="@id/findcar_markdown_item_title_tv"
             android:layout_toRightOf="@id/findcar_markdown_item_now_price_tv"/>
         <TextView
@@ -52,7 +51,7 @@
             android:layout_height="wrap_content"
             android:text="降价"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="@dimen/margin_twenty_five"
             android:layout_below="@id/findcar_markdown_item_title_tv"
             android:layout_marginRight="10dp"/>
     </RelativeLayout>
@@ -65,20 +64,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="city"
-            android:layout_margin="10dp"/>
+            android:layout_margin="@dimen/margin_ten"/>
         <TextView
             android:id="@+id/findcar_markdown_item_shortname_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="city"
             android:layout_toRightOf="@id/findcar_markdown_item_city_tv"
-            android:layout_margin="10dp"/>
+            android:layout_margin="@dimen/margin_ten"/>
         <TextView
             android:id="@+id/findcar_markdown_item_orderrange_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="city"
             android:layout_toRightOf="@id/findcar_markdown_item_shortname_tv"
-            android:layout_margin="10dp"/>
+            android:layout_margin="@dimen/margin_ten"/>
     </RelativeLayout>
 </LinearLayout>

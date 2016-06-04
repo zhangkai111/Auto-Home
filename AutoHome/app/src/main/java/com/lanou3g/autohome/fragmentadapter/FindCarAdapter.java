@@ -10,6 +10,8 @@ import java.util.List;
  * Created by dllo on 16/5/10.
  */
 public class FindCarAdapter extends FragmentPagerAdapter {
+
+
     private List<Fragment> fragments;
     String[] titles = {"品牌","筛选","降价","找二手车"};
 

@@ -21,6 +21,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import cn.jpush.android.api.JPushInterface;
+import it.sephiroth.android.library.picasso.Picasso;
 
 /**
  * Created by dllo on 16/5/5.
@@ -72,48 +73,51 @@ public class WelcomeActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-        MyImage myImage = new MyImage();
-        myImage.execute("http://adm3.autoimg.cn/admdfs/g10/M12/76/1B/wKgH0Vcv_RqAafI9AAMYdEmLL2w312.jpg");
+//        MyImage myImage = new MyImage();
+//        myImage.execute("http://adm3.autoimg.cn/admdfs/g10/M12/76/1B/wKgH0Vcv_RqAafI9AAMYdEmLL2w312.jpg");
 
+        Picasso.with(getApplicationContext()).load("http://adm3.autoimg.cn/admdfs/g10/M12/76/1B/wKgH0Vcv_RqAafI9AAMYdEmLL2w312.jpg").into(imageView);
     }
 
 
-    class MyImage extends AsyncTask<String , Void , Bitmap>{
-
-        @Override
-        protected Bitmap doInBackground(String... params) {
-            //下载图片
-            String imgUrl = params[0];
-
-            try {
-                URL url = new URL(imgUrl);
-                connection = (HttpURLConnection) url.openConnection();
-                is = connection.getInputStream();
-                bitmap = BitmapFactory.decodeStream(is);
-
-                return bitmap;
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }finally {
-                try {
-                    is.close();
-                    connection.disconnect();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-            }
-            return null;
-        }
-        @Override
-        protected void onPostExecute(Bitmap bitmap) {
-            super.onPostExecute(bitmap);
-
-            imageView.setImageBitmap(bitmap);
-        }
-    }
+//    class MyImage extends AsyncTask<String , Void , Bitmap>{
+//
+//        @Override
+//        protected Bitmap doInBackground(String... params) {
+//            //下载图片
+//            String imgUrl = params[0];
+//
+//            try {
+//                URL url = new URL(imgUrl);
+//                connection = (HttpURLConnection) url.openConnection();
+//                is = connection.getInputStream();
+//                bitmap = BitmapFactory.decodeStream(is);
+//
+//                return bitmap;
+//            } catch (MalformedURLException e) {
+//                e.printStackTrace();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }finally {
+//                try {
+//                    is.close();
+//                    connection.disconnect();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//
+//            }
+//            return null;
+//        }
+//        @Override
+//        protected void onPostExecute(Bitmap bitmap) {
+//            super.onPostExecute(bitmap);
+//
+//            imageView.setImageBitmap(bitmap);
+//        }
+//
+//
+//    }
 
     @Override
     protected void onResume() {
